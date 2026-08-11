@@ -317,5 +317,16 @@
 
 </div>
 
+<script>
+  /* Cerrar el visor de fotos con la tecla Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var lb = document.querySelector('.lightbox:target');
+    if (!lb) return;
+    var salida = lb.querySelector('.lightbox-close, .lightbox-x');
+    if (salida) location.replace(salida.getAttribute('href'));
+  });
+</script>
+
 </body>
 </html>
