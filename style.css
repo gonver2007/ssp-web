@@ -127,13 +127,22 @@ a:hover { color: var(--acc-hi); }
 }
 .tab:hover { background: color-mix(in srgb, #e9e9ed 7%, transparent); color: var(--text); }
 
-body:not(:has(#proyectos:target, #packs:target, .gallery:target, .gallery:has(.lightbox:target))) .tab-home,
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lightbox:target)) .tab-home,
 body:has(#proyectos:target) .tab-proyectos,
 body:has(.gallery:target) .tab-proyectos,
-body:has(.gallery:has(.lightbox:target)) .tab-proyectos,
+body:has(.lightbox:target) .tab-proyectos,
 body:has(#packs:target) .tab-packs {
-  border-color: var(--acc);
   color: var(--acc);
+  border-color: var(--acc);
+}
+
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lightbox:target)) .tab-home:hover,
+body:has(#proyectos:target) .tab-proyectos:hover,
+body:has(.gallery:target) .tab-proyectos:hover,
+body:has(.lightbox:target) .tab-proyectos:hover,
+body:has(#packs:target) .tab-packs:hover {
+  color: var(--acc-hi);
+  background: color-mix(in srgb, var(--acc) 12%, transparent);
 }
 
 /* ── vistas ──────────────────────────── */
@@ -720,13 +729,22 @@ a:hover { color: var(--acc-hi); }
 }
 .tab:hover { background: color-mix(in srgb, #e9e9ed 7%, transparent); color: var(--text); }
 
-body:not(:has(#proyectos:target, #packs:target, .gallery:target, .gallery:has(.lightbox:target))) .tab-home,
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lightbox:target)) .tab-home,
 body:has(#proyectos:target) .tab-proyectos,
 body:has(.gallery:target) .tab-proyectos,
-body:has(.gallery:has(.lightbox:target)) .tab-proyectos,
+body:has(.lightbox:target) .tab-proyectos,
 body:has(#packs:target) .tab-packs {
-  border-color: var(--acc);
   color: var(--acc);
+  border-color: var(--acc);
+}
+
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lightbox:target)) .tab-home:hover,
+body:has(#proyectos:target) .tab-proyectos:hover,
+body:has(.gallery:target) .tab-proyectos:hover,
+body:has(.lightbox:target) .tab-proyectos:hover,
+body:has(#packs:target) .tab-packs:hover {
+  color: var(--acc-hi);
+  background: color-mix(in srgb, var(--acc) 12%, transparent);
 }
 
 /* ── vistas ──────────────────────────── */
