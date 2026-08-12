@@ -10,22 +10,151 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../css/main.css">
-<script type="module" src="../js/app.js"></script>
 </head>
 
-<body data-seccion="proyectos" data-base="../">
+<body>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<ssp-rail></ssp-rail>
+<header class="rail">
+    <a class="rail-brand" href="../">
+        <img class="rail-emblem" src="../contenido/SSP%201.20.png" alt="">
+        <span class="rail-id">
+            <span class="rail-name">SSP 1.20</span>
+            <span class="rail-sub">-gonver</span>
+        </span>
+    </a>
+
+    <nav class="rail-nav" aria-label="Secciones">
+        <a class="rail-link" href="../"><span class="rail-idx">01</span>Inicio</a>
+        <a class="rail-link" href="./" aria-current="page"><span class="rail-idx">02</span>Proyectos</a>
+        <a class="rail-link" href="../packs/"><span class="rail-idx">03</span>Texture packs</a>
+    </nav>
+
+    <dl class="rail-state">
+        <div class="state-row"><dt>versión</dt><dd>1.20</dd></div>
+        <div class="state-row"><dt>modo</dt><dd>supervivencia</dd></div>
+        <div class="state-row"><dt>mods</dt><dd>ninguno</dd></div>
+        <div class="state-row"><dt>jugadores</dt><dd>gonver</dd></div>
+    </dl>
+
+    <div class="rail-out">
+        <a class="out-link" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">YouTube<span class="out-arrow">↗</span></a>
+        <a class="out-link" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market<span class="out-arrow">↗</span></a>
+    </div>
+</header>
 
 <div class="root" id="contenido">
-    <ssp-proyectos></ssp-proyectos>
-</div>
+    <main class="page">
 
-<noscript>
-    <p class="sin-js">Esta página monta sus secciones con JavaScript. Actívalo para ver la bitácora del mundo.</p>
-</noscript>
+        <a class="back" href="../"><span class="back-arrow">←</span>Inicio</a>
+
+        <header class="head">
+            <p class="eyebrow"><span class="eyebrow-tick"></span>Sección 02</p>
+            <h1 class="page-title">Proyectos</h1>
+            <p class="page-lead">Cada construcción del mundo en orden de finalización. Entra en una para ver la galería o salta directo al vídeo.</p>
+        </header>
+
+        <!-- Una parada por proyecto, en orden de finalización. La obra en
+             curso cierra la lista: sin fecha, sin galería y sin retícula. -->
+        <ol class="timeline">
+
+            <li class="tl">
+                <div class="tl-mark">
+                    <span class="tl-dot"></span>
+                    <time class="tl-date" datetime="2026-04-12">12 abr 2026</time>
+                </div>
+                <article class="tl-card frame">
+                    <a class="tl-media" href="base/"><img class="tl-img" src="../contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central"></a>
+                    <div class="tl-body">
+                        <p class="tl-num">01 -EarlyGame</p>
+                        <h2 class="tl-title"><a href="base/">Base Central</a></h2>
+                        <p class="tl-desc">El corazón del mundo: almacenamiento, granjas de comida, aldeanos y un trading hall.</p>
+                        <p class="tl-links">
+                            <a class="btn btn-line btn-sm" href="base/">Galería · 3 fotos</a>
+                            <a class="btn btn-ghost btn-sm" href="https://youtu.be/cXO41NqHXOk?si=hvbw87YNsEd48-XX" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+                        </p>
+                    </div>
+                </article>
+            </li>
+
+            <li class="tl">
+                <div class="tl-mark">
+                    <span class="tl-dot"></span>
+                    <time class="tl-date" datetime="2026-05-10">10 may 2026</time>
+                </div>
+                <article class="tl-card frame">
+                    <a class="tl-media" href="fortaleza/"><img class="tl-img" src="../contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza infernal optimizada"></a>
+                    <div class="tl-body">
+                        <p class="tl-num">02</p>
+                        <h2 class="tl-title"><a href="fortaleza/">Fortaleza Infernal Optimizada</a></h2>
+                        <p class="tl-desc">Mi mayor fuente de carbon, hueso y experiencia.</p>
+                        <p class="tl-links">
+                            <a class="btn btn-line btn-sm" href="fortaleza/">Galería · 3 fotos</a>
+                            <a class="btn btn-ghost btn-sm" href="https://youtu.be/k6vbQ9m7YJo?si=BGniCaydUdzbzsnK" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+                        </p>
+                    </div>
+                </article>
+            </li>
+
+            <li class="tl">
+                <div class="tl-mark">
+                    <span class="tl-dot"></span>
+                    <time class="tl-date" datetime="2026-07-10">10 jul 2026</time>
+                </div>
+                <article class="tl-card frame">
+                    <a class="tl-media" href="slime/"><img class="tl-img" src="../contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"></a>
+                    <div class="tl-body">
+                        <p class="tl-num">03 -EarlyGame</p>
+                        <h2 class="tl-title"><a href="slime/">Slime Farm</a></h2>
+                        <p class="tl-desc">Mi fuente de slime.</p>
+                        <p class="tl-links">
+                            <a class="btn btn-line btn-sm" href="slime/">Galería · 3 fotos</a>
+                            <a class="btn btn-ghost btn-sm" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+                        </p>
+                    </div>
+                </article>
+            </li>
+
+            <li class="tl">
+                <div class="tl-mark">
+                    <span class="tl-dot"></span>
+                    <time class="tl-date" datetime="2026-08-09">9 ago 2026</time>
+                </div>
+                <article class="tl-card frame">
+                    <a class="tl-media" href="gold/"><img class="tl-img" src="../contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro en el Nether"></a>
+                    <div class="tl-body">
+                        <p class="tl-num">04 -EarlyGame</p>
+                        <h2 class="tl-title"><a href="gold/">Gold Farm</a></h2>
+                        <p class="tl-desc">Mi fuente de oro.</p>
+                        <p class="tl-links">
+                            <a class="btn btn-line btn-sm" href="gold/">Galería · 3 fotos</a>
+                            <a class="btn btn-ghost btn-sm" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+                        </p>
+                    </div>
+                </article>
+            </li>
+
+            <li class="tl tl-next">
+                <div class="tl-mark">
+                    <span class="tl-dot tl-dot-open"></span>
+                    <time class="tl-date">próximo</time>
+                </div>
+                <article class="tl-card">
+                    <div class="tl-media tl-media-wip"><img class="tl-wip" src="../contenido/wip.png" alt=""></div>
+                    <div class="tl-body">
+                        <p class="tl-num tl-num-open">05</p>
+                        <h2 class="tl-title">En construcción</h2>
+                        <p class="tl-desc">El siguiente proyecto del mundo todavía está en obras. Aparecerá aquí en cuanto esté terminado.</p>
+                        <p class="tl-links"><span class="pill pill-wip">En obras</span></p>
+                    </div>
+                </article>
+            </li>
+
+        </ol>
+
+    </main>
+</div>
 
 </body>
 </html>

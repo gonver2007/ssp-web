@@ -10,24 +10,135 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="css/main.css">
-<script type="module" src="js/app.js"></script>
 </head>
 
-<!-- data-base: profundidad hasta la raíz del sitio, de donde salen todos
-     los enlaces e imágenes. data-seccion: qué pestaña se enciende. -->
-<body data-seccion="inicio" data-base="">
+<body>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<ssp-rail></ssp-rail>
+<!-- Rail. Se repite en cada documento porque cambian dos cosas: la
+     profundidad de los enlaces y cuál lleva aria-current. -->
+<header class="rail">
+    <a class="rail-brand" href="./">
+        <img class="rail-emblem" src="contenido/SSP%201.20.png" alt="">
+        <span class="rail-id">
+            <span class="rail-name">SSP 1.20</span>
+            <span class="rail-sub">-gonver</span>
+        </span>
+    </a>
+
+    <nav class="rail-nav" aria-label="Secciones">
+        <a class="rail-link" href="./" aria-current="page"><span class="rail-idx">01</span>Inicio</a>
+        <a class="rail-link" href="proyectos/"><span class="rail-idx">02</span>Proyectos</a>
+        <a class="rail-link" href="packs/"><span class="rail-idx">03</span>Texture packs</a>
+    </nav>
+
+    <dl class="rail-state">
+        <div class="state-row"><dt>versión</dt><dd>1.20</dd></div>
+        <div class="state-row"><dt>modo</dt><dd>supervivencia</dd></div>
+        <div class="state-row"><dt>mods</dt><dd>ninguno</dd></div>
+        <div class="state-row"><dt>jugadores</dt><dd>gonver</dd></div>
+    </dl>
+
+    <div class="rail-out">
+        <a class="out-link" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">YouTube<span class="out-arrow">↗</span></a>
+        <a class="out-link" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market<span class="out-arrow">↗</span></a>
+    </div>
+</header>
 
 <div class="root" id="contenido">
-    <ssp-inicio></ssp-inicio>
-</div>
+    <main class="page">
 
-<noscript>
-    <p class="sin-js">Esta página monta sus secciones con JavaScript. Actívalo para ver la bitácora del mundo.</p>
-</noscript>
+        <section class="hero">
+            <div class="hero-copy">
+                <p class="eyebrow"><span class="eyebrow-tick"></span>Survival Single Player · Minecraft 1.20</p>
+                <h1 class="hero-title">Un mundo<br>para toda<br><em>la vida</em></h1>
+                <p class="hero-lead">Vanilla, sin mods y en solitario. Aquí queda registrado todo lo que construyo: Cada proyecto, cada granja y los texture packs que uso en la serie.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLweq8_0eVzE2LyytXi07ktzgwQ_KavB_w" target="_blank" rel="noopener noreferrer">Ver la serie</a>
+                    <a class="btn btn-line" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">Ver canal</a>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <span class="hero-glow" aria-hidden="true"></span>
+                <span class="hero-plate" aria-hidden="true"></span>
+                <img class="hero-skin" src="contenido/yo.png" alt="La skin de gonver con armadura de diamante">
+            </div>
+        </section>
+
+        <!-- Lectura tipo F3: decorativa, no se lee en voz alta. -->
+        <div class="readout" aria-hidden="true">
+            <span>X: 12</span><span>Y: 4</span><span>Z: -2026</span><span class="readout-sep">//</span><span>Bioma: youtube</span><span class="readout-sep">//</span><span>Sin mods</span>
+        </div>
+
+        <section class="block">
+            <h2 class="sec-title"><span class="sec-num">A</span>Explora</h2>
+            <div class="explore">
+                <!-- La foto de la fortaleza está muy abierta: ex-img-zoom la acerca. -->
+                <a class="ex-card frame" href="proyectos/">
+                    <span class="ex-media"><img class="ex-img ex-img-zoom" src="contenido/foi.png" alt="Interior de la fortaleza infernal"></span>
+                    <span class="ex-foot">
+                        <span class="ex-text">
+                            <span class="ex-name">Proyectos</span>
+                            <span class="ex-desc">Mi base, mis granjas y la línea de tiempo del mundo</span>
+                        </span>
+                        <span class="ex-go">→</span>
+                    </span>
+                </a>
+                <a class="ex-card frame" href="packs/">
+                    <span class="ex-media"><img class="ex-img" src="contenido/tp.png" alt="Muestra de los texture packs"></span>
+                    <span class="ex-foot">
+                        <span class="ex-text">
+                            <span class="ex-name">Texture packs</span>
+                            <span class="ex-desc">Los packs que uso, con enlaces de descarga</span>
+                        </span>
+                        <span class="ex-go">→</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- <details> abre y cierra solo: ni un byte de JavaScript. -->
+        <section class="block faq">
+            <h2 class="sec-title"><span class="sec-num">B</span>Preguntas frecuentes</h2>
+
+            <details class="qa">
+                <summary class="qa-q">¿Has abandonado la serie?<span class="qa-sign" aria-hidden="true"></span></summary>
+                <div class="qa-a">
+                    <p>No. Esta serie requiere tiempo y es normal que el ritmo no sea constante.</p>
+                </div>
+            </details>
+
+            <details class="qa">
+                <summary class="qa-q">¿En qué versión de Minecraft juegas?<span class="qa-sign" aria-hidden="true"></span></summary>
+                <div class="qa-a">
+                    <p>Actualmente estoy en la versión 1.20.</p>
+                </div>
+            </details>
+
+            <details class="qa">
+                <summary class="qa-q">¿Usas mods en la serie?<span class="qa-sign" aria-hidden="true"></span></summary>
+                <div class="qa-a">
+                    <p>En esta serie no uso mods, aunque los he usado anteriormente.</p>
+                </div>
+            </details>
+
+            <details class="qa">
+                <summary class="qa-q">¿Por qué no usas mods?<span class="qa-sign" aria-hidden="true"></span></summary>
+                <div class="qa-a">
+                    <p>Principalmente por dos motivos:</p>
+                    <ul class="qa-list">
+                        <li>Porque me gusta jugar a Minecraft lo más vanilla posible.</li>
+                        <li>Por fallos, bugs, corrupción de mundos, etc.</li>
+                    </ul>
+                    <p>En resumen: si quiero un mundo para toda la vida, busco la forma más segura y la que más me gusta.</p>
+                </div>
+            </details>
+        </section>
+
+    </main>
+</div>
 
 </body>
 </html>

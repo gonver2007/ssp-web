@@ -1,4 +1,4 @@
-/* ── Salto al contenido y aviso sin JavaScript ──────────────────────── */
+/* ── Salto al contenido ─────────────────────────────────────────────── */
 
 .skip {
     position: absolute;
@@ -12,16 +12,3 @@
     font-size: 12px;
 }
 .skip:focus { left: 0; }
-
-/* Las secciones las monta JavaScript; sin él no queda nada que enseñar */
-.sin-js {
-    max-width: 62ch;
-    margin: 0 auto;
-    padding: clamp(44px, 6vw, 84px) var(--gut);
-    font-family: var(--mono);
-    font-size: 13px;
-    line-height: 1.8;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    text-align: center;
-}

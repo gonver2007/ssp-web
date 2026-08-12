@@ -1,15 +1,4 @@
-/* ── Lienzo, páginas y montaje de componentes ───────────────────────── */
-
-/* Los componentes son puntos de montaje transparentes: no dibujan caja
-   propia, así el HTML que generan conserva la relación padre-hijo que
-   espera el resto del CSS (`.page > .hero`, `.root > .page`, …). */
-ssp-rail,
-ssp-inicio,
-ssp-proyectos,
-ssp-galeria,
-ssp-packs {
-    display: contents;
-}
+/* ── Lienzo y páginas ───────────────────────────────────────────────── */
 
 /* Sin z-index propio: si creara contexto de apilamiento, el visor de fotos
    quedaría atrapado debajo del rail. */

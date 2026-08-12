@@ -82,10 +82,9 @@
     background: rgba(60, 230, 240, 0.04);
 }
 
-/* Pestaña de la sección abierta. El rail marca su enlace con
-   `aria-current="page"` a partir del `data-seccion` del documento, así que
-   basta con un selector en vez del bloque de `:has(…:target)` que hacía
-   falta cuando todas las secciones convivían en el mismo archivo. */
+/* Pestaña de la sección abierta. Cada documento marca a mano su enlace con
+   `aria-current="page"`, que es lo que un lector de pantalla espera en una
+   navegación y de paso el gancho de este selector. */
 .rail-link[aria-current="page"] {
     color: var(--cyan);
     border-left-color: var(--cyan);

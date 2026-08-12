@@ -1,115 +1,95 @@
 # gonver ssp · estructura del proyecto
 
-Bitácora del mundo de supervivencia. HTML, CSS y JavaScript nativos: sin
-frameworks, sin dependencias y sin paso de compilación.
+Bitácora del mundo de supervivencia. HTML y CSS nativos: sin frameworks, sin
+dependencias, sin paso de compilación y con **seis líneas de JavaScript en
+todo el sitio** (la tecla Escape del visor de fotos).
 
 ## Cómo se abre
 
-**Hace falta un servidor local.** Los módulos ES no cargan desde `file://`,
-así que hacer doble clic en `index.html` ya no funciona:
-
-- VS Code → extensión **Live Server** → clic derecho en `index.html` →
-  *Open with Live Server*. Es la vía cómoda y no pide instalar nada más.
-- Cualquier otro servidor estático sirve igual (`python -m http.server`,
-  `npx serve`…), pero hoy no hay ni Python ni Node en este equipo.
+Doble clic en `index.html` y funciona. Ya no hay módulos ES, así que tampoco
+hace falta un servidor local; si prefieres uno (Live Server de VS Code,
+`python -m http.server`, `npx serve`…) también sirve, y es lo que más se
+parece a cómo lo verá la gente.
 
 ## Las URLs
 
 Cada sección es un documento propio en su carpeta:
 
-| URL                     | Documento                       | Monta          |
-| ----------------------- | ------------------------------- | -------------- |
-| `/`                     | `index.html`                    | `ssp-inicio`   |
-| `/proyectos/`           | `proyectos/index.html`          | `ssp-proyectos`|
-| `/proyectos/base/`      | `proyectos/base/index.html`     | `ssp-galeria`  |
-| `/proyectos/fortaleza/` | `proyectos/fortaleza/index.html`| `ssp-galeria`  |
-| `/proyectos/slime/`     | `proyectos/slime/index.html`    | `ssp-galeria`  |
-| `/proyectos/gold/`      | `proyectos/gold/index.html`     | `ssp-galeria`  |
-| `/packs/`               | `packs/index.html`              | `ssp-packs`    |
+| URL                     | Documento                        |
+| ----------------------- | -------------------------------- |
+| `/`                     | `index.html`                     |
+| `/proyectos/`           | `proyectos/index.html`           |
+| `/proyectos/base/`      | `proyectos/base/index.html`      |
+| `/proyectos/fortaleza/` | `proyectos/fortaleza/index.html` |
+| `/proyectos/slime/`     | `proyectos/slime/index.html`     |
+| `/proyectos/gold/`      | `proyectos/gold/index.html`      |
+| `/packs/`               | `packs/index.html`               |
 
 Las fotos son la excepción: se abren con un fragmento dentro de su galería,
-`/proyectos/base/#foto-1`. Así el visor sigue siendo CSS puro (`:target`),
-abre y cierra sin recargar, y el enlace se puede compartir igual.
-
-### Cómo sabe cada página dónde está
-
-Todo sale de tres atributos del `<body>`, declarados una vez por documento:
-
-```html
-<body data-seccion="proyectos" data-base="../../" data-proyecto="base">
-```
-
-- **`data-base`** — el camino hasta la raíz del sitio (`''`, `'../'` o
-  `'../../'`). Todos los enlaces e imágenes se escriben desde la raíz
-  (`'packs/'`, `'contenido/yo.png'`) y [`js/nucleo/rutas.js`](js/nucleo/rutas.js)
-  les antepone esto. Por eso no hay ni una ruta absoluta: el sitio funciona
-  igual servido en la raíz que colgando de `/ssp-web/` en GitHub Pages.
-- **`data-seccion`** — qué pestaña del rail se enciende. Las galerías dicen
-  `proyectos`, así que dejan marcada su sección. El rail pone
-  `aria-current="page"` en el enlace que coincide, y el CSS lo estiliza
-  desde ahí.
-- **`data-proyecto`** — solo en las galerías: elige qué proyecto de los
-  datos se monta. Los cuatro archivos de galería son idénticos salvo esto,
-  el `<title>` y la descripción.
+`/proyectos/base/#foto-1`. El visor es CSS puro (`:target`), abre y cierra
+sin recargar, y el enlace se puede compartir igual.
 
 ## Cómo está montado
 
-Ningún `index.html` contiene contenido: solo declara qué componentes hay.
+Cada documento **contiene su contenido escrito a mano**. No hay plantillas,
+ni datos, ni montaje: lo que pone en el HTML es lo que se ve, también con
+JavaScript desactivado y también para un rastreador.
 
 ```html
-<ssp-rail></ssp-rail>
+<header class="rail">…</header>
+
 <div class="root" id="contenido">
-    <ssp-galeria></ssp-galeria>
+    <main class="page gallery">…</main>
 </div>
 ```
 
-Cada `<ssp-*>` es un **custom element** que se rellena solo al montarse.
+### Rutas relativas, nunca absolutas
 
-### Las capas
+Cada enlace e imagen se escribe desde su propia carpeta (`../`, `../../`).
+Así el sitio funciona igual servido en la raíz que colgando de `/ssp-web/`
+en GitHub Pages, y también abierto desde el disco.
 
-| Carpeta           | Qué hay                                                                |
-| ----------------- | ---------------------------------------------------------------------- |
-| `js/datos/`       | El contenido. Texto, rutas y enlaces. Es lo único que se toca a diario.|
-| `js/plantillas/`  | Funciones puras que convierten datos en HTML. Sin estado, sin DOM.     |
-| `js/componentes/` | Los `<ssp-*>`: unen unos datos con unas plantillas y se montan.        |
-| `js/nucleo/`      | El motor: la etiqueta `html`, la clase base, las rutas y la tecla Esc. |
+Los nombres de archivo con espacios van codificados en el HTML
+(`contenido/linia%20de%20tiempo/base.png`): el navegador tolera el espacio
+crudo, pero copiar un enlace sin codificar da problemas.
 
-### Dos reglas que sostienen el diseño
+### Lo que se repite
 
-**1. Los componentes no dibujan caja.** Todos llevan `display: contents` en
-CSS. Así el HTML que generan hereda la relación padre-hijo real y selectores
-como `.page > .hero` funcionan igual que si estuviera escrito a mano.
+El rail está copiado en los siete documentos, y cambia en dos cosas: la
+profundidad de sus enlaces y cuál lleva `aria-current="page"` — el atributo
+que un lector de pantalla espera en una navegación y del que tira el CSS
+para encender la pestaña. Las galerías dicen *Proyectos*, así que dejan
+marcada su sección.
 
-**2. Nada de shadow DOM.** El visor de fotos se abre con `:target` y el CSS
-del sitio necesita ver el marcado que generan los componentes. Todo vive en
-el DOM normal, a la vista.
+Es una duplicación deliberada: el precio de que no haga falta JavaScript
+para pintar la navegación. Si cambias un enlace del rail, cámbialo en los
+siete archivos.
 
 ## Tareas frecuentes
 
 **Añadir un proyecto** → dos pasos:
 
-1. Un objeto nuevo en [`js/datos/proyectos.js`](js/datos/proyectos.js). De
-   ahí salen solas la parada de la línea de tiempo, la galería y el visor
-   de cada foto.
-2. Copiar una carpeta de galería existente a `proyectos/<id>/` y cambiarle
-   tres cosas: el `<title>`, la `<meta name="description">` y el
-   `data-proyecto` del `<body>`. El `id` del paso 1 y el `data-proyecto`
-   tienen que coincidir; si no, la página lo dice en pantalla en vez de
-   quedarse en blanco.
+1. Copiar una carpeta de galería existente a `proyectos/<id>/` y cambiar el
+   `<title>`, la `<meta name="description">`, la cabecera, las fotos y sus
+   visores. Los `id` de los visores son `foto-1`, `foto-2`… y cada uno
+   vuelve a `#fotos` al cerrarse.
+2. Añadir su parada `<li class="tl">` al final de la `<ol class="timeline">`
+   de `proyectos/index.html`, antes de la parada `tl-next` que cierra la
+   lista. Y actualizar la portada de la parada *En construcción* si toca.
 
-**Añadir un texture pack** → un objeto en `js/datos/packs.js`.
+**Añadir un texture pack** → un `<article class="pack frame">` más en
+`packs/index.html`.
 
-**Añadir una pregunta** → un objeto en `js/datos/preguntas.js`. La respuesta
-es una lista de bloques: `{ p: '…' }` para un párrafo, `{ lista: [...] }`
-para una enumeración.
+**Añadir una pregunta** → un `<details class="qa">` más en el bloque `.faq`
+de `index.html`. Abre y cierra solo, sin JavaScript.
 
 **Cambiar un color o una medida** → `css/base/tokens.css`, el único sitio
 donde se deciden.
 
 ## CSS
 
-`css/main.css` no tiene reglas: declara las capas, importa el resto y activa
-la transición entre documentos.
+Aquí está todo el trabajo. `css/main.css` no tiene reglas: declara las capas,
+importa el resto y activa la transición entre documentos.
 
 ```
 base/         tokens, normalización, composición de páginas, movimiento
@@ -124,16 +104,11 @@ selectores cada vez más largos.
 otra. Es mejora progresiva: donde no hay soporte (Firefox, hoy) la
 navegación es la normal de siempre.
 
-## Interpolación segura
+## El único JavaScript
 
-Las plantillas usan la etiqueta `html` de `js/nucleo/html.js`, que **escapa
-todo lo que se interpola** salvo lo que ya salió de otra plantilla:
-
-```js
-html`<p>${textoDelUsuario}</p>`     // escapado
-html`<div>${otraPlantilla()}</div>` // se respeta, ya es HTML
-crudo('<b>ojo</b>')                  // escotilla de salida, úsala lo mínimo
-```
+[`js/esc.js`](js/esc.js), cargado solo en las cuatro galerías: cierra el
+visor con la tecla Escape, que es lo único de todo el sitio que el CSS no
+puede escuchar. Si se borra, el visor sigue abriendo y cerrando con el clic.
 
 ## GitHub Pages
 
@@ -147,18 +122,7 @@ encuentra la ruta.
 ## Pendiente
 
 - `contenido/faq.png`, `contenido/vuelve.png` y `contenido/yt.png` no los
-  usa ninguna página (tampoco antes de la reestructuración).
+  usa ninguna página.
 - `css/componentes/pie.css` describe un pie que no monta ninguna página.
 - Los proyectos *Slime Farm* y *Gold Farm* apuntan al mismo vídeo
   (`tZL-htTrhRc`). Venía así del HTML original.
-
-## Lo que se perdió por el camino
-
-El contenido lo monta JavaScript, así que **la página no se ve sin JS** y
-los rastreadores que no ejecutan scripts no leen el texto. Es el precio de
-componentizar en el navegador; si alguna vez pesa más el SEO que la
-comodidad, la salida es generar el HTML al publicar en vez de al visitar.
-
-Lo que sí mejoró al separar las secciones en documentos: cada URL tiene su
-propio `<title>` y su descripción, y cada página carga solo su contenido en
-lugar de llevar las siete escondidas en el mismo archivo.

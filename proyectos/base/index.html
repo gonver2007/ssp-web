@@ -10,25 +10,81 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../../css/main.css">
-<script type="module" src="../../js/app.js"></script>
+<script src="../../js/esc.js" defer></script>
 </head>
 
-<!-- data-proyecto elige qué proyecto de js/datos/proyectos.js se monta.
-     Los cuatro archivos de galería solo se diferencian en esto, el título
-     y la descripción. -->
-<body data-seccion="proyectos" data-base="../../" data-proyecto="base">
+<body>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<ssp-rail></ssp-rail>
+<header class="rail">
+    <a class="rail-brand" href="../../">
+        <img class="rail-emblem" src="../../contenido/SSP%201.20.png" alt="">
+        <span class="rail-id">
+            <span class="rail-name">SSP 1.20</span>
+            <span class="rail-sub">-gonver</span>
+        </span>
+    </a>
+
+    <!-- Las galerías cuelgan de Proyectos, así que dejan encendida su pestaña. -->
+    <nav class="rail-nav" aria-label="Secciones">
+        <a class="rail-link" href="../../"><span class="rail-idx">01</span>Inicio</a>
+        <a class="rail-link" href="../" aria-current="page"><span class="rail-idx">02</span>Proyectos</a>
+        <a class="rail-link" href="../../packs/"><span class="rail-idx">03</span>Texture packs</a>
+    </nav>
+
+    <dl class="rail-state">
+        <div class="state-row"><dt>versión</dt><dd>1.20</dd></div>
+        <div class="state-row"><dt>modo</dt><dd>supervivencia</dd></div>
+        <div class="state-row"><dt>mods</dt><dd>ninguno</dd></div>
+        <div class="state-row"><dt>jugadores</dt><dd>gonver</dd></div>
+    </dl>
+
+    <div class="rail-out">
+        <a class="out-link" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">YouTube<span class="out-arrow">↗</span></a>
+        <a class="out-link" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market<span class="out-arrow">↗</span></a>
+    </div>
+</header>
 
 <div class="root" id="contenido">
-    <ssp-galeria></ssp-galeria>
-</div>
+    <main class="page gallery">
 
-<noscript>
-    <p class="sin-js">Esta página monta sus secciones con JavaScript. Actívalo para ver la bitácora del mundo.</p>
-</noscript>
+        <a class="back" href="../"><span class="back-arrow">←</span>Proyectos</a>
+
+        <header class="head">
+            <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 01</p>
+            <h1 class="page-title">Base Central</h1>
+            <p class="page-lead">Aquí hay un poco de todo: granja de comida, aldeanos, mobs, caña de azúcar y un trading hall.</p>
+            <p class="meta">
+                <time class="pill" datetime="2026-04-12">12 abr 2026</time>
+                <span class="meta-dot"></span>
+                <span class="meta-txt">3 fotos</span>
+            </p>
+        </header>
+
+        <section class="shots" id="fotos">
+            <figure class="shot shot-wide">
+                <a class="shot-link frame" href="#foto-1"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central al atardecer"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>Vista general</b>Toda la base vista desde fuera, con las granjas alrededor del edificio principal.</figcaption>
+            </figure>
+            <figure class="shot">
+                <a class="shot-link frame" href="#foto-2"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/galeria/base1.png" alt="Interior de piedra de la base"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>Interior</b>Bajada a desde el trading hall a el interior de la base.</figcaption>
+            </figure>
+            <figure class="shot">
+                <a class="shot-link frame" href="#foto-3"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/galeria/base2.png" alt="Pasillo de la base con el portal del Nether"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>Portal del Nether</b>El pasillo interior que lleva hasta el portal.</figcaption>
+            </figure>
+        </section>
+
+        <!-- Los visores existen siempre, ocultos; `:target` enseña el que toca.
+             Al cerrarse vuelven a #fotos, la rejilla de arriba. -->
+        <div class="lb" id="foto-1"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central al atardecer"><figcaption class="lb-cap">Vista general de la base</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+        <div class="lb" id="foto-2"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/galeria/base1.png" alt="Interior de piedra de la base"><figcaption class="lb-cap">Interior</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+        <div class="lb" id="foto-3"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/galeria/base2.png" alt="Pasillo de la base con el portal del Nether"><figcaption class="lb-cap">Portal del Nether</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+
+    </main>
+</div>
 
 </body>
 </html>

@@ -10,22 +10,78 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="../../css/main.css">
-<script type="module" src="../../js/app.js"></script>
+<script src="../../js/esc.js" defer></script>
 </head>
 
-<body data-seccion="proyectos" data-base="../../" data-proyecto="gold">
+<body>
 
 <a class="skip" href="#contenido">Saltar al contenido</a>
 
-<ssp-rail></ssp-rail>
+<header class="rail">
+    <a class="rail-brand" href="../../">
+        <img class="rail-emblem" src="../../contenido/SSP%201.20.png" alt="">
+        <span class="rail-id">
+            <span class="rail-name">SSP 1.20</span>
+            <span class="rail-sub">-gonver</span>
+        </span>
+    </a>
+
+    <nav class="rail-nav" aria-label="Secciones">
+        <a class="rail-link" href="../../"><span class="rail-idx">01</span>Inicio</a>
+        <a class="rail-link" href="../" aria-current="page"><span class="rail-idx">02</span>Proyectos</a>
+        <a class="rail-link" href="../../packs/"><span class="rail-idx">03</span>Texture packs</a>
+    </nav>
+
+    <dl class="rail-state">
+        <div class="state-row"><dt>versión</dt><dd>1.20</dd></div>
+        <div class="state-row"><dt>modo</dt><dd>supervivencia</dd></div>
+        <div class="state-row"><dt>mods</dt><dd>ninguno</dd></div>
+        <div class="state-row"><dt>jugadores</dt><dd>gonver</dd></div>
+    </dl>
+
+    <div class="rail-out">
+        <a class="out-link" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">YouTube<span class="out-arrow">↗</span></a>
+        <a class="out-link" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market<span class="out-arrow">↗</span></a>
+    </div>
+</header>
 
 <div class="root" id="contenido">
-    <ssp-galeria></ssp-galeria>
-</div>
+    <main class="page gallery">
 
-<noscript>
-    <p class="sin-js">Esta página monta sus secciones con JavaScript. Actívalo para ver la bitácora del mundo.</p>
-</noscript>
+        <a class="back" href="../"><span class="back-arrow">←</span>Proyectos</a>
+
+        <header class="head">
+            <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 04</p>
+            <h1 class="page-title">Gold Farm</h1>
+            <p class="page-lead">Granja de oro en el Nether, con plataformas de magma.</p>
+            <p class="meta">
+                <time class="pill" datetime="2026-08-09">9 ago 2026</time>
+                <span class="meta-dot"></span>
+                <span class="meta-txt">3 fotos</span>
+            </p>
+        </header>
+
+        <section class="shots" id="fotos">
+            <figure class="shot shot-wide">
+                <a class="shot-link frame" href="#foto-1"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/galeria/Gold%20farm1.png" alt="Plataformas de spawn de la granja de oro"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>Plataformas de spawn</b>Las plataformas montadas una encima de la otra, listas para los zombiepigman.</figcaption>
+            </figure>
+            <figure class="shot">
+                <a class="shot-link frame" href="#foto-2"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/Gold%20farm.png" alt="La granja de oro vista de lejos entre la niebla del Nether"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>La granja desde lejos</b>La estructura suspendida, vista entre la niebla del Nether.</figcaption>
+            </figure>
+            <figure class="shot">
+                <a class="shot-link frame" href="#foto-3"><img class="shot-img" src="../../contenido/linia%20de%20tiempo/galeria/Gold%20farm2.png" alt="Interior de la granja de oro desde el centro"><span class="shot-zoom">Ampliar</span></a>
+                <figcaption class="shot-cap"><b>Desde dentro</b>El conjunto de plataformas visto arriba de la estructura.</figcaption>
+            </figure>
+        </section>
+
+        <div class="lb" id="foto-1"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/galeria/Gold%20farm1.png" alt="Plataformas de spawn de la granja de oro"><figcaption class="lb-cap">Plataformas de spawn</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+        <div class="lb" id="foto-2"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/Gold%20farm.png" alt="La granja de oro vista de lejos entre la niebla del Nether"><figcaption class="lb-cap">La granja desde lejos</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+        <div class="lb" id="foto-3"><a class="lb-bg" href="#fotos" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="../../contenido/linia%20de%20tiempo/galeria/Gold%20farm2.png" alt="Interior de la granja de oro desde el centro"><figcaption class="lb-cap">Desde dentro</figcaption></figure><a class="lb-x" href="#fotos">Cerrar ✕</a></div>
+
+    </main>
+</div>
 
 </body>
 </html>
