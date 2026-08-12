@@ -1,4 +1,5 @@
 import { html } from '../nucleo/html.js';
+import { destino } from '../nucleo/rutas.js';
 
 /** Rótulo con rombo que abre cada sección. */
 export const encabezado = (texto) => html`
@@ -7,7 +8,7 @@ export const encabezado = (texto) => html`
 
 /** Enlace de vuelta a la página de la que se viene. */
 export const volver = ({ texto, href }) => html`
-    <a class="back" href="${href}"><span class="back-arrow">←</span>${texto}</a>
+    <a class="back" href="${destino(href)}"><span class="back-arrow">←</span>${texto}</a>
 `;
 
 /** Cabecera de página interior: rótulo, título, entradilla y metadatos. */

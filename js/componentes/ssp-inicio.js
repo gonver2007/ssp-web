@@ -13,7 +13,7 @@ import { tituloSeccion } from '../plantillas/cabecera.js';
 class Inicio extends Componente {
     plantilla() {
         return html`
-            <main class="page" id="home">
+            <main class="page">
                 ${hero(portada)}
 
                 ${lectura(lecturaF3)}

@@ -4,8 +4,9 @@
    línea de tiempo, su página de galería y el visor de cada foto. Añadir un
    proyecto es añadir un objeto aquí; no hay que tocar HTML.
 
-   `id` manda sobre los anclajes: la galería vive en `#g-<id>` y cada foto
-   en `#lb-<id>-<n>`.
+   `id` manda sobre la URL: la galería es un documento propio en
+   `proyectos/<id>/` y cada foto se abre con el fragmento `#foto-<n>`
+   dentro de ella.
    ═══════════════════════════════════════════════════════════════════════ */
 
 const TIEMPO = 'contenido/linia de tiempo';
@@ -164,6 +165,15 @@ export const proximoProyecto = {
     imagen: 'contenido/wip.png'
 };
 
-/* Anclajes: los calcula el `id` del proyecto, nunca se escriben a mano. */
-export const anclaGaleria = (proyecto) => `#g-${proyecto.id}`;
-export const anclaFoto = (proyecto, indice) => `#lb-${proyecto.id}-${indice + 1}`;
+/* Direcciones: las calcula el `id`, nunca se escriben a mano.
+   `rutaGaleria` se escribe desde la raíz del sitio; quien la use la pasa
+   por `destino()` para adaptarla a la profundidad de su página. */
+export const rutaGaleria = (proyecto) => `proyectos/${proyecto.id}/`;
+
+/** Ancla del visor dentro de su propia galería. */
+export const anclaFoto = (indice) => `#foto-${indice + 1}`;
+
+/** Ancla de la rejilla de fotos: es a donde vuelve el visor al cerrarse. */
+export const ANCLA_FOTOS = '#fotos';
+
+export const buscarProyecto = (id) => proyectos.find((proyecto) => proyecto.id === id);

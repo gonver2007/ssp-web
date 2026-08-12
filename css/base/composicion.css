@@ -6,7 +6,7 @@
 ssp-rail,
 ssp-inicio,
 ssp-proyectos,
-ssp-galerias,
+ssp-galeria,
 ssp-packs {
     display: contents;
 }
@@ -18,16 +18,14 @@ ssp-packs {
     padding: 0 var(--gut) 0 calc(var(--rail) + var(--gut));
 }
 
+/* Cada sección es su propio documento, así que hay exactamente una página
+   por archivo y siempre se ve. Antes esto se encendía y apagaba con
+   `:target`; ahora lo decide la URL de verdad. */
 .page {
-    display: none;
     max-width: var(--maxw);
     margin: 0 auto;
     padding: clamp(44px, 6vw, 84px) 0 clamp(60px, 8vw, 110px);
 }
-
-.page:target { display: block; }
-.page:has(.lb:target) { display: block; }
-body:not(:has(.page:target, .lb:target)) #home { display: block; }
 
 /* Entrada escalonada al abrir cada página */
 @keyframes rise {
@@ -46,7 +44,7 @@ body:not(:has(.page:target, .lb:target)) #home { display: block; }
 @media (max-width: 1080px) {
     .root { padding: 0 var(--gut); }
 
-    /* Con la barra pegada arriba, el salto a una sección no debe esconder
-       su primera línea debajo de ella */
-    .page { scroll-margin-top: 92px; }
+    /* Con la barra pegada arriba, el salto a la rejilla de fotos no debe
+       esconder su primera línea debajo de ella */
+    .shots { scroll-margin-top: 92px; }
 }

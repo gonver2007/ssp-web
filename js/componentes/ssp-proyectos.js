@@ -9,8 +9,8 @@ import { paradaProyecto, paradaProxima } from '../plantillas/linea-tiempo.js';
 class Proyectos extends Componente {
     plantilla() {
         return html`
-            <main class="page" id="proyectos">
-                ${volver({ texto: 'Inicio', href: '#home' })}
+            <main class="page">
+                ${volver({ texto: 'Inicio', href: '' })}
 
                 ${cabecera({
                     rotulo: 'Sección 02',

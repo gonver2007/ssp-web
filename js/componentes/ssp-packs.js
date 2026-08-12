@@ -7,8 +7,8 @@ import { tarjetaPack } from '../plantillas/packs.js';
 class Packs extends Componente {
     plantilla() {
         return html`
-            <main class="page" id="packs">
-                ${volver({ texto: 'Inicio', href: '#home' })}
+            <main class="page">
+                ${volver({ texto: 'Inicio', href: '' })}
 
                 ${cabecera({
                     rotulo: 'Sección 03',

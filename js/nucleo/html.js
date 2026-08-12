@@ -5,6 +5,8 @@
    JSX: componer trozos de HTML sin poder inyectar marcado por accidente.
    ═══════════════════════════════════════════════════════════════════════ */
 
+import { BASE } from './rutas.js';
+
 const ESCAPES = {
     '&': '&amp;',
     '<': '&lt;',
@@ -49,9 +51,11 @@ export function html(trozos, ...valores) {
     return new Fragmento(salida);
 }
 
-/* Las rutas de `contenido/` llevan espacios y el navegador los tolera, pero
-   codificarlas evita sorpresas al copiar un enlace o al servirlas. */
-export const ruta = (camino) => encodeURI(camino);
+/* Ruta a un archivo de `contenido/`, escrita siempre desde la raíz del
+   sitio. Se le antepone la profundidad de la página actual y se codifica:
+   estos nombres llevan espacios y el navegador los tolera, pero copiar un
+   enlace con espacios sin codificar da problemas. */
+export const ruta = (camino) => BASE + encodeURI(camino);
 
 /** Junta clases descartando las que estén vacías o en falso. */
 export const clases = (...nombres) => nombres.filter(Boolean).join(' ');

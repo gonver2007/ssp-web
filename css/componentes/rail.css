@@ -82,22 +82,17 @@
     background: rgba(60, 230, 240, 0.04);
 }
 
-/* Pestaña activa según la página abierta por :target */
-body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home,
-body:has(#proyectos:target) .link-proyectos,
-body:has(.gallery:target) .link-proyectos,
-body:has(.lb:target)       .link-proyectos,
-body:has(#packs:target)    .link-packs {
+/* Pestaña de la sección abierta. El rail marca su enlace con
+   `aria-current="page"` a partir del `data-seccion` del documento, así que
+   basta con un selector en vez del bloque de `:has(…:target)` que hacía
+   falta cuando todas las secciones convivían en el mismo archivo. */
+.rail-link[aria-current="page"] {
     color: var(--cyan);
     border-left-color: var(--cyan);
     background: linear-gradient(90deg, rgba(60, 230, 240, 0.10), transparent 70%);
 }
 
-body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home .rail-idx,
-body:has(#proyectos:target) .link-proyectos .rail-idx,
-body:has(.gallery:target) .link-proyectos .rail-idx,
-body:has(.lb:target)       .link-proyectos .rail-idx,
-body:has(#packs:target)    .link-packs .rail-idx {
+.rail-link[aria-current="page"] .rail-idx {
     color: var(--cyan-deep);
 }
 
@@ -164,11 +159,7 @@ body:has(#packs:target)    .link-packs .rail-idx {
     }
     .rail-link:hover { border-left: 0; border-bottom-color: var(--cyan-deep); }
 
-    body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home,
-    body:has(#proyectos:target) .link-proyectos,
-    body:has(.gallery:target) .link-proyectos,
-    body:has(.lb:target)       .link-proyectos,
-    body:has(#packs:target)    .link-packs {
+    .rail-link[aria-current="page"] {
         border-left: 0;
         border-bottom-color: var(--cyan);
         background: linear-gradient(0deg, rgba(60, 230, 240, 0.10), transparent 70%);

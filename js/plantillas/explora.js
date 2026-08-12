@@ -1,8 +1,9 @@
 import { html, ruta, clases } from '../nucleo/html.js';
+import { destino } from '../nucleo/rutas.js';
 
 /** Tarjeta grande de la portada que lleva a una sección. */
 export const tarjetaExplora = ({ titulo, descripcion, href, imagen, acercar }) => html`
-    <a class="ex-card frame" href="${href}">
+    <a class="ex-card frame" href="${destino(href)}">
         <span class="ex-media"><img class="${clases('ex-img', acercar && 'ex-img-zoom')}" src="${ruta(imagen.src)}" alt="${imagen.alt}"></span>
         <span class="ex-foot">
             <span class="ex-text">

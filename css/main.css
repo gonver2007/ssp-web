@@ -29,3 +29,12 @@
 @import url("componentes/visor.css") layer(componentes);
 @import url("componentes/packs.css") layer(componentes);
 @import url("componentes/pie.css") layer(componentes);
+
+/* Transición entre documentos. Cada sección es ahora una carga de página
+   real; esto le devuelve el cambio suave que tenía cuando todo vivía en un
+   único archivo. Mejora progresiva: donde no hay soporte (Firefox, hoy) la
+   navegación es la normal de siempre. Va fuera de las capas porque es una
+   regla de nivel superior, no un estilo que compita con nadie. */
+@view-transition {
+    navigation: auto;
+}

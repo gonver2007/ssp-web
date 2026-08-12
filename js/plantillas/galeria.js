@@ -1,33 +1,29 @@
 import { html, ruta, clases } from '../nucleo/html.js';
-import { anclaGaleria, anclaFoto } from '../datos/proyectos.js';
+import { anclaFoto, ANCLA_FOTOS } from '../datos/proyectos.js';
 import { volver, cabecera } from './cabecera.js';
 
 /** Una foto de la rejilla; al pulsarla se abre su visor. */
-const figura = (proyecto, foto, indice) => html`
+const figura = (foto, indice) => html`
     <figure class="${clases('shot', foto.ancha && 'shot-wide')}">
-        <a class="shot-link frame" href="${anclaFoto(proyecto, indice)}"><img class="shot-img" src="${ruta(foto.src)}" alt="${foto.alt}"><span class="shot-zoom">Ampliar</span></a>
+        <a class="shot-link frame" href="${anclaFoto(indice)}"><img class="shot-img" src="${ruta(foto.src)}" alt="${foto.alt}"><span class="shot-zoom">Ampliar</span></a>
         <figcaption class="shot-cap"><b>${foto.titulo}</b>${foto.pie}</figcaption>
     </figure>
 `;
 
-/* El visor es CSS puro: existe siempre, oculto, y `:target` lo enseña.
-   Los dos enlaces de cierre apuntan a la galería, que es de donde se vino. */
-const visor = (proyecto, foto, indice) => {
-    const cerrar = anclaGaleria(proyecto);
-    const id = anclaFoto(proyecto, indice).slice(1);
-
-    return html`
-        <div class="lb" id="${id}"><a class="lb-bg" href="${cerrar}" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="${ruta(foto.src)}" alt="${foto.alt}"><figcaption class="lb-cap">${foto.visor || foto.titulo}</figcaption></figure><a class="lb-x" href="${cerrar}">Cerrar ✕</a></div>
-    `;
-};
+/* El visor sigue siendo CSS puro: existe siempre, oculto, y `:target` lo
+   enseña. Es la única parte del sitio que no cambia de URL, y por eso abre
+   y cierra sin recargar. Al cerrarse vuelve a la rejilla de fotos. */
+const visor = (foto, indice) => html`
+    <div class="lb" id="${anclaFoto(indice).slice(1)}"><a class="lb-bg" href="${ANCLA_FOTOS}" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="${ruta(foto.src)}" alt="${foto.alt}"><figcaption class="lb-cap">${foto.visor || foto.titulo}</figcaption></figure><a class="lb-x" href="${ANCLA_FOTOS}">Cerrar ✕</a></div>
+`;
 
 /** Página completa de galería de un proyecto. */
 export function paginaGaleria(proyecto) {
     const fotos = proyecto.fotos;
 
     return html`
-        <main class="page gallery" id="${anclaGaleria(proyecto).slice(1)}">
-            ${volver({ texto: 'Proyectos', href: '#proyectos' })}
+        <main class="page gallery">
+            ${volver({ texto: 'Proyectos', href: 'proyectos/' })}
 
             ${cabecera({
                 rotulo: `Galería · proyecto ${proyecto.num}`,
@@ -42,11 +38,11 @@ export function paginaGaleria(proyecto) {
                 `
             })}
 
-            <section class="shots">
-                ${fotos.map((foto, indice) => figura(proyecto, foto, indice))}
+            <section class="shots" id="${ANCLA_FOTOS.slice(1)}">
+                ${fotos.map(figura)}
             </section>
 
-            ${fotos.map((foto, indice) => visor(proyecto, foto, indice))}
+            ${fotos.map(visor)}
         </main>
     `;
 }

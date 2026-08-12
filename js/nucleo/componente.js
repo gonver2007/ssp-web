@@ -5,8 +5,9 @@
    propia y el HTML que genera hereda la relación padre-hijo que el resto
    del CSS espera (`.root > .page`, `.page > .hero`, …).
 
-   Sin shadow DOM a propósito: el sitio navega con `:target` y su CSS usa
-   `body:has(#packs:target)`. Una raíz sombreada rompería ambas cosas.
+   Sin shadow DOM a propósito: el visor de fotos se abre con `:target` y el
+   CSS del sitio necesita ver el marcado que generan los componentes. Una
+   raíz sombreada aislaría ambas cosas.
    ═══════════════════════════════════════════════════════════════════════ */
 
 import { aTexto } from './html.js';

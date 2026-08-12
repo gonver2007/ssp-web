@@ -1,5 +1,6 @@
 import { html, ruta } from '../nucleo/html.js';
-import { anclaGaleria } from '../datos/proyectos.js';
+import { destino } from '../nucleo/rutas.js';
+import { rutaGaleria } from '../datos/proyectos.js';
 import { boton } from './boton.js';
 
 /* El recuento sale de las fotos que hay, no de un número escrito a mano:
@@ -10,7 +11,10 @@ const numero = ({ num, etapa }) => (etapa ? `${num} -${etapa}` : num);
 
 /** Una parada de la línea de tiempo. */
 export function paradaProyecto(proyecto) {
-    const galeria = anclaGaleria(proyecto);
+    // `boton` resuelve el destino por su cuenta, así que recibe la ruta tal
+    // cual; los enlaces sueltos de aquí sí la necesitan ya resuelta.
+    const galeria = rutaGaleria(proyecto);
+    const href = destino(galeria);
 
     return html`
         <li class="tl">
@@ -19,10 +23,10 @@ export function paradaProyecto(proyecto) {
                 <time class="tl-date" datetime="${proyecto.fecha.iso}">${proyecto.fecha.texto}</time>
             </div>
             <article class="tl-card frame">
-                <a class="tl-media" href="${galeria}"><img class="tl-img" src="${ruta(proyecto.portada.src)}" alt="${proyecto.portada.alt}"></a>
+                <a class="tl-media" href="${href}"><img class="tl-img" src="${ruta(proyecto.portada.src)}" alt="${proyecto.portada.alt}"></a>
                 <div class="tl-body">
                     <p class="tl-num">${numero(proyecto)}</p>
-                    <h2 class="tl-title"><a href="${galeria}">${proyecto.titulo}</a></h2>
+                    <h2 class="tl-title"><a href="${href}">${proyecto.titulo}</a></h2>
                     <p class="tl-desc">${proyecto.descripcion}</p>
                     <p class="tl-links">
                         ${boton({ texto: recuento(proyecto.fotos), href: galeria, variante: 'line', pequeno: true })}

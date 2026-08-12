@@ -4,15 +4,17 @@ export const marca = {
     nombre: 'SSP 1.20',
     sub: '-gonver',
     emblema: 'contenido/SSP 1.20.png',
-    href: '#home'
+    href: ''
 };
 
-/* `idx` es el número que se ve; la clase `link-…` la deriva el componente
-   del propio destino, así que basta con tocar el href para renombrar. */
+/* Los `href` se escriben desde la raíz del sitio ('' es la portada) y cada
+   página los adapta a su profundidad. `seccion` es lo que enciende la
+   pestaña: las galerías declaran 'proyectos', así que se quedan marcadas
+   en su sección aunque cuelguen más abajo. */
 export const navegacion = [
-    { idx: '01', texto: 'Inicio', href: '#home' },
-    { idx: '02', texto: 'Proyectos', href: '#proyectos' },
-    { idx: '03', texto: 'Texture packs', href: '#packs' }
+    { idx: '01', texto: 'Inicio', href: '', seccion: 'inicio' },
+    { idx: '02', texto: 'Proyectos', href: 'proyectos/', seccion: 'proyectos' },
+    { idx: '03', texto: 'Texture packs', href: 'packs/', seccion: 'packs' }
 ];
 
 export const estadoDelMundo = [

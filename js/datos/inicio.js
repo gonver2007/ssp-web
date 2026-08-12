@@ -36,7 +36,7 @@ export const tarjetasExplora = [
     {
         titulo: 'Proyectos',
         descripcion: 'Mi base, mis granjas y la línea de tiempo del mundo',
-        href: '#proyectos',
+        href: 'proyectos/',
         imagen: { src: 'contenido/foi.png', alt: 'Interior de la fortaleza infernal' },
         // La foto original está muy abierta: se acerca para que se lea algo.
         acercar: true
@@ -44,7 +44,7 @@ export const tarjetasExplora = [
     {
         titulo: 'Texture packs',
         descripcion: 'Los packs que uso, con enlaces de descarga',
-        href: '#packs',
+        href: 'packs/',
         imagen: { src: 'contenido/tp.png', alt: 'Muestra de los texture packs' }
     }
 ];
