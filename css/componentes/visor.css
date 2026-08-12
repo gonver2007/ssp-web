@@ -1,0 +1,58 @@
+/* ── Visor de fotos · abre y cierra con :target, sin JavaScript ─────── */
+
+.lb { display: none; }
+
+.lb:target {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    padding: clamp(20px, 5vw, 60px);
+    background: rgba(2, 5, 7, 0.94);
+    backdrop-filter: blur(8px);
+    animation: rise 0.25s ease both;
+}
+
+.lb-bg { position: absolute; inset: 0; cursor: zoom-out; }
+
+.lb-fig {
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 1280px;
+}
+
+.lb-img {
+    max-height: 78vh;
+    width: auto;
+    border: 1px solid var(--cyan-deep);
+    box-shadow: 0 40px 120px -40px rgba(60, 230, 240, 0.45);
+}
+
+.lb-cap {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+}
+
+.lb-x {
+    position: absolute;
+    top: clamp(16px, 3vw, 30px);
+    right: clamp(16px, 3vw, 30px);
+    padding: 10px 16px;
+    border: 1px solid var(--line-2);
+    background: rgba(8, 14, 18, 0.9);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text);
+    transition: border-color 0.18s ease, color 0.18s ease;
+}
+.lb-x:hover { border-color: var(--cyan); color: var(--cyan); }

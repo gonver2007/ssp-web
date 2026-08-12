@@ -1,0 +1,23 @@
+/* ── Lectura de datos tipo F3 ───────────────────────────────────────── */
+
+.readout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-top: clamp(38px, 5vw, 58px);
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+}
+
+.readout-sep { color: var(--cyan-deep); }
+
+@media (max-width: 560px) {
+    .readout { gap: 6px 14px; font-size: 10px; }
+}

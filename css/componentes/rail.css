@@ -1,0 +1,190 @@
+/* ── Rail lateral · marca, navegación y estado del mundo ────────────── */
+
+.rail {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: var(--rail);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    padding: 30px 24px 26px;
+    background: linear-gradient(180deg, rgba(8, 14, 18, 0.96), rgba(4, 7, 10, 0.96));
+    border-right: 1px solid var(--line);
+    backdrop-filter: blur(6px);
+}
+
+.rail-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text);
+}
+
+.rail-emblem {
+    width: 38px;
+    height: 42px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 0 12px rgba(60, 230, 240, 0.35));
+}
+
+.rail-id { display: flex; flex-direction: column; }
+
+.rail-name {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+}
+
+.rail-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+}
+
+.rail-nav { display: flex; flex-direction: column; }
+
+.rail-link {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 11px 12px 11px 14px;
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--muted);
+    border-left: 1px solid var(--line);
+    transition: color 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.rail-idx {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--faint);
+    font-variant-numeric: tabular-nums;
+    transition: color 0.18s ease;
+}
+
+.rail-link:hover {
+    color: var(--text);
+    border-left-color: var(--cyan-deep);
+    background: rgba(60, 230, 240, 0.04);
+}
+
+/* Pestaña activa según la página abierta por :target */
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home,
+body:has(#proyectos:target) .link-proyectos,
+body:has(.gallery:target) .link-proyectos,
+body:has(.lb:target)       .link-proyectos,
+body:has(#packs:target)    .link-packs {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+    background: linear-gradient(90deg, rgba(60, 230, 240, 0.10), transparent 70%);
+}
+
+body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home .rail-idx,
+body:has(#proyectos:target) .link-proyectos .rail-idx,
+body:has(.gallery:target) .link-proyectos .rail-idx,
+body:has(.lb:target)       .link-proyectos .rail-idx,
+body:has(#packs:target)    .link-packs .rail-idx {
+    color: var(--cyan-deep);
+}
+
+.rail-state {
+    margin: auto 0 0;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.state-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 3px 0;
+}
+
+.state-row dt { color: var(--faint); text-transform: uppercase; font-size: 10px; letter-spacing: 0.12em; }
+.state-row dd { margin: 0; color: var(--text); font-variant-numeric: tabular-nums; }
+
+.rail-out { display: flex; flex-direction: column; gap: 6px; }
+
+.out-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 0;
+    transition: color 0.18s ease;
+}
+.out-link:hover { color: var(--cyan); }
+.out-arrow { color: var(--cyan-deep); }
+.out-link:hover .out-arrow { color: var(--cyan); }
+
+/* ── Adaptación ─────────────────────────────────────────────────────── */
+
+@media (max-width: 1080px) {
+    .rail {
+        position: sticky;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        width: auto;
+        height: auto;
+        gap: 10px 22px;
+        padding: 12px var(--gut);
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .rail-nav { flex-direction: row; margin-left: auto; }
+
+    .rail-link {
+        padding: 8px 12px;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+    }
+    .rail-link:hover { border-left: 0; border-bottom-color: var(--cyan-deep); }
+
+    body:not(:has(#proyectos:target, #packs:target, .gallery:target, .lb:target)) .link-home,
+    body:has(#proyectos:target) .link-proyectos,
+    body:has(.gallery:target) .link-proyectos,
+    body:has(.lb:target)       .link-proyectos,
+    body:has(#packs:target)    .link-packs {
+        border-left: 0;
+        border-bottom-color: var(--cyan);
+        background: linear-gradient(0deg, rgba(60, 230, 240, 0.10), transparent 70%);
+    }
+
+    .rail-idx { display: none; }
+    .rail-state, .rail-out { display: none; }
+}
+
+/* Por debajo de esto la marca y las tres secciones no caben en una fila */
+@media (max-width: 700px) {
+    .rail { padding-bottom: 0; gap: 8px; }
+    .rail-nav { width: 100%; margin-left: 0; }
+    .rail-link { flex: 1; min-width: 0; justify-content: center; padding: 9px 4px; font-size: 13px; }
+}
+
+@media (max-width: 560px) {
+    .rail-sub { display: none; }
+}

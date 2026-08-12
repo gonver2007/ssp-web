@@ -1,0 +1,14 @@
+/* ── Movimiento reducido ────────────────────────────────────────────── */
+
+/* Va en la capa `base`, la primera: entre declaraciones `!important` gana
+   la capa más temprana, así que esto apaga cualquier animación que un
+   componente declare después. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

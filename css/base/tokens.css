@@ -1,0 +1,34 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Tokens · el único sitio donde se decide color, tipografía y medida
+   Estética: HUD técnico sobre roca negra. Rejilla de chunks, retículas en
+   las esquinas, datos en monoespaciada y el cian del diamante como única
+   fuente de luz. Diseño comprometido con un solo tema (oscuro).
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+    color-scheme: dark;
+
+    /* Color ─ negros con sesgo cian, nunca grises neutros */
+    --void:      #04070a;
+    --panel:     #080e12;
+    --panel-2:   #0c151a;
+    --line:      #17262c;
+    --line-2:    #22383f;
+    --cyan:      #3ce6f0;
+    --cyan-lit:  #8ef4fa;
+    --cyan-deep: #0e6b78;
+    --amber:     #e8b04b;
+    --text:      #dbeaee;
+    --muted:     #8ba6ad;
+    --faint:     #55707a;
+
+    /* Tipografía */
+    --display: "Chakra Petch", "Segoe UI Semibold", system-ui, sans-serif;
+    --sans:    "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+    /* Medidas */
+    --rail: 264px;
+    --maxw: 1120px;
+    --gut: clamp(20px, 4vw, 56px);
+}

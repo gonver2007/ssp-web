@@ -1,0 +1,52 @@
+/* ── Lienzo, páginas y montaje de componentes ───────────────────────── */
+
+/* Los componentes son puntos de montaje transparentes: no dibujan caja
+   propia, así el HTML que generan conserva la relación padre-hijo que
+   espera el resto del CSS (`.page > .hero`, `.root > .page`, …). */
+ssp-rail,
+ssp-inicio,
+ssp-proyectos,
+ssp-galerias,
+ssp-packs {
+    display: contents;
+}
+
+/* Sin z-index propio: si creara contexto de apilamiento, el visor de fotos
+   quedaría atrapado debajo del rail. */
+.root {
+    position: relative;
+    padding: 0 var(--gut) 0 calc(var(--rail) + var(--gut));
+}
+
+.page {
+    display: none;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: clamp(44px, 6vw, 84px) 0 clamp(60px, 8vw, 110px);
+}
+
+.page:target { display: block; }
+.page:has(.lb:target) { display: block; }
+body:not(:has(.page:target, .lb:target)) #home { display: block; }
+
+/* Entrada escalonada al abrir cada página */
+@keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.page > :where(.back, .head, .hero, .readout, .block, .timeline, .shots, .packs) {
+    animation: rise 0.55s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+.page > :where(.back, .head, .hero, .readout, .block, .timeline, .shots, .packs):nth-child(2) { animation-delay: 0.07s; }
+.page > :where(.back, .head, .hero, .readout, .block, .timeline, .shots, .packs):nth-child(3) { animation-delay: 0.14s; }
+.page > :where(.back, .head, .hero, .readout, .block, .timeline, .shots, .packs):nth-child(4) { animation-delay: 0.21s; }
+.page > :where(.back, .head, .hero, .readout, .block, .timeline, .shots, .packs):nth-child(n + 5) { animation-delay: 0.28s; }
+
+@media (max-width: 1080px) {
+    .root { padding: 0 var(--gut); }
+
+    /* Con la barra pegada arriba, el salto a una sección no debe esconder
+       su primera línea debajo de ella */
+    .page { scroll-margin-top: 92px; }
+}

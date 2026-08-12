@@ -1,0 +1,98 @@
+/* ── Galerías · rejilla de fotos ────────────────────────────────────── */
+
+.shots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.shot { margin: 0; display: flex; flex-direction: column; gap: 12px; }
+.shot-wide { grid-column: 1 / -1; }
+
+.shot-link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.shot-link:hover { border-color: var(--cyan-deep); box-shadow: 0 26px 60px -34px rgba(60, 230, 240, 0.6); }
+
+/* Sobre una foto clara, un trazo de 1px al 50% no se lee: aquí la retícula
+   va por dentro del recorte, más gruesa y más opaca. */
+.shot-link.frame::before,
+.shot-link.frame::after {
+    width: 17px;
+    height: 17px;
+    border-width: 2px;
+    opacity: 0.85;
+}
+.shot-link.frame::before { top: 0; left: 0; }
+.shot-link.frame::after { bottom: 0; right: 0; }
+.shot-link.frame:hover::before,
+.shot-link.frame:hover::after { width: 28px; height: 28px; opacity: 1; }
+
+.shot-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.shot-wide .shot-img { aspect-ratio: 21 / 9; }
+.shot-link:hover .shot-img { transform: scale(1.04); }
+
+.shot-zoom {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 4;
+    padding: 6px 11px;
+    background: rgba(4, 7, 10, 0.82);
+    border: 1px solid var(--cyan-deep);
+    color: var(--cyan);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.shot-link:hover .shot-zoom,
+.shot-link:focus-visible .shot-zoom { opacity: 1; transform: none; }
+
+.shot-cap {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.shot-cap b {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+/* Hueco reservado para una foto que todavía no existe. Ninguna plantilla
+   lo emite ahora mismo; se conserva del diseño original. */
+.shot-link-soon {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    border-style: dashed;
+    border-color: var(--line);
+}
+.shot-wip { width: 74px; opacity: 0.42; image-rendering: pixelated; }
+
+.shot-pending { color: var(--amber); opacity: 0.85; }
+
+@media (max-width: 860px) {
+    .shots { grid-template-columns: minmax(0, 1fr); }
+    .shot-wide .shot-img { aspect-ratio: 16 / 9; }
+}

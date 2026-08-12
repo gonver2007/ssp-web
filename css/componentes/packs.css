@@ -1,0 +1,53 @@
+/* ── Texture packs ──────────────────────────────────────────────────── */
+
+.packs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.pack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 26px 26px 28px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.pack:hover { border-color: var(--cyan-deep); box-shadow: 0 26px 60px -34px rgba(60, 230, 240, 0.5); }
+
+.pack-head { display: flex; align-items: center; gap: 14px; }
+
+.pack-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    image-rendering: pixelated;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    padding: 5px;
+}
+
+.pack-name {
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pack-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cyan-deep);
+}
+
+.pack-desc { color: var(--muted); font-size: 14.5px; flex: 1; }
+
+.pack-links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 860px) {
+    .packs { grid-template-columns: minmax(0, 1fr); }
+}

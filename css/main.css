@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* ═══════════════════════════════════════════════════════════════════════
+   gonver ssp · hoja maestra
+   Cada componente vive en su propio archivo y entra aquí dentro de una
+   capa. El orden de las capas manda por encima de la especificidad: así
+   `componentes` puede ajustar lo que fija `base` sin necesidad de
+   selectores cada vez más largos.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@layer base, componentes;
+
+@import url("base/tokens.css") layer(base);
+@import url("base/reset.css") layer(base);
+@import url("base/composicion.css") layer(base);
+@import url("base/movimiento.css") layer(base);
+
+@import url("componentes/salto.css") layer(componentes);
+@import url("componentes/rail.css") layer(componentes);
+@import url("componentes/comunes.css") layer(componentes);
+@import url("componentes/marco.css") layer(componentes);
+@import url("componentes/boton.css") layer(componentes);
+@import url("componentes/hero.css") layer(componentes);
+@import url("componentes/lectura.css") layer(componentes);
+@import url("componentes/explora.css") layer(componentes);
+@import url("componentes/preguntas.css") layer(componentes);
+@import url("componentes/linea-tiempo.css") layer(componentes);
+@import url("componentes/galeria.css") layer(componentes);
+@import url("componentes/visor.css") layer(componentes);
+@import url("componentes/packs.css") layer(componentes);
+@import url("componentes/pie.css") layer(componentes);

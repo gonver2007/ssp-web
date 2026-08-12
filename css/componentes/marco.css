@@ -1,0 +1,22 @@
+/* ── Retícula · dos esquinas en L que se abren al pasar el ratón ────── */
+
+.frame { position: relative; }
+
+.frame::before,
+.frame::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--cyan);
+    opacity: 0.5;
+    pointer-events: none;
+    /* la sombra mantiene legible la retícula cuando cae sobre una foto clara */
+    filter: drop-shadow(0 0 3px rgba(4, 7, 10, 0.95));
+    transition: width 0.22s ease, height 0.22s ease, opacity 0.22s ease;
+}
+.frame::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.frame::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+.frame:hover::before,
+.frame:hover::after { width: 24px; height: 24px; opacity: 1; }
