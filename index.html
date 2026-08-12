@@ -1,319 +1,386 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gonver ssp</title>
+<title>gonver ssp · Bitácora del mundo</title>
+<meta name="description" content="Bitácora del mundo de supervivencia en solitario de gonver: proyectos, granjas y texture packs. Minecraft 1.20 vanilla, sin mods.">
+<link rel="icon" href="contenido/SSP%201.20.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<a class="skip" href="#home">Saltar al contenido</a>
+
+<!-- ═══ Rail lateral · marca, navegación y estado del mundo ═══ -->
+<header class="rail">
+  <a class="rail-brand" href="#home">
+    <img class="rail-emblem" src="contenido/SSP%201.20.png" alt="">
+    <span class="rail-id">
+      <span class="rail-name">gonver ssp</span>
+      <span class="rail-sub">bitácora del mundo</span>
+    </span>
+  </a>
+
+  <nav class="rail-nav" aria-label="Secciones">
+    <a class="rail-link link-home" href="#home"><span class="rail-idx">01</span>Inicio</a>
+    <a class="rail-link link-proyectos" href="#proyectos"><span class="rail-idx">02</span>Proyectos</a>
+    <a class="rail-link link-packs" href="#packs"><span class="rail-idx">03</span>Texture packs</a>
+  </nav>
+
+  <dl class="rail-state">
+    <div class="state-row"><dt>versión</dt><dd>1.20</dd></div>
+    <div class="state-row"><dt>modo</dt><dd>supervivencia</dd></div>
+    <div class="state-row"><dt>mods</dt><dd>ninguno</dd></div>
+    <div class="state-row"><dt>jugadores</dt><dd>yo</dd></div>
+  </dl>
+
+  <div class="rail-out">
+    <a class="out-link" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">YouTube<span class="out-arrow">↗</span></a>
+    <a class="out-link" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market<span class="out-arrow">↗</span></a>
+  </div>
+</header>
+
 <div class="root">
 
-    <header class="site-header">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span class="brand-name">gonver ssp</span>
-    <span class="brand-version">1.20</span>
-    <nav class="tabs">
-      <a class="tab tab-home" href="#home">Inicio</a>
-      <a class="tab tab-proyectos" href="#proyectos">Proyectos</a>
-      <a class="tab tab-packs" href="#packs">Texture Packs</a>
-    </nav>
-  </header>
+<!-- ═══ Inicio ═══ -->
+<main class="page" id="home">
 
-  <!-- ══ Inicio ══ -->
-  <main class="page" id="home">
-    <div class="hero">
-      <div class="hero-copy">
-        <p class="kicker">Web oficial · Survival Single Player Gonver</p>
-        <h1 class="hero-title">Bienvenidos <br>a la web de SSP</h1>
-        <p class="hero-lead">Mundo Vanilla sin mods en la versión 1.20. <br>Aquí Encontraras Mis Proyectos Y Mis Texture Packs.</p>
-        <div class="hero-actions">
-          <a class="btn btn-secondary" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">Canal</a>
-          <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLweq8_0eVzE2LyytXi07ktzgwQ_KavB_w" target="_blank" rel="noopener noreferrer">Ver la serie</a>
-          <a class="btn btn-secondary" href="https://market.phantom-node.com/profile/gonver" target="_blank" rel="noopener noreferrer">Phantom Market</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <img class="hero-skin" src="contenido/yo.png" alt="Skin de gonver">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-tick"></span>Survival Single Player · Minecraft 1.20</p>
+      <h1 class="hero-title">Un mundo<br>para toda<br><em>la vida</em></h1>
+      <p class="hero-lead">Vanilla, sin mods y en solitario. Aquí queda registrado todo lo que construyo: Cada proyecto, cada granja y los texture packs que uso en la serie.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.youtube.com/playlist?list=PLweq8_0eVzE2LyytXi07ktzgwQ_KavB_w" target="_blank" rel="noopener noreferrer">Ver la serie</a>
+        <a class="btn btn-line" href="https://www.youtube.com/@gonverYT" target="_blank" rel="noopener noreferrer">Ver canal</a>
       </div>
     </div>
 
-    <h2 class="section-title">Explora</h2>
-    <section class="explore-grid">
-      <a class="explore-card" href="#proyectos">
-        <span class="explore-media"><img class="explore-img explore-img-zoom" src="contenido/foi.png" alt="Proyectos"></span>
-        <span class="explore-foot">
-          <span class="explore-name">Proyectos</span>
-          <span class="explore-cta">Ver →</span>
-        </span>
-      </a>
-      <a class="explore-card" href="#packs">
-        <span class="explore-media"><img class="explore-img" src="contenido/tp.png" alt="Texture Packs"></span>
-        <span class="explore-foot">
-          <span class="explore-name">Texture Packs</span>
-          <span class="explore-cta">Ver →</span>
-        </span>
-      </a>
-    </section>
+    <div class="hero-art">
+      <span class="hero-glow" aria-hidden="true"></span>
+      <span class="hero-plate" aria-hidden="true"></span>
+      <img class="hero-skin" src="contenido/yo.png" alt="La skin de gonver con armadura de diamante">
+    </div>
+  </section>
 
-    <section class="faq">
-      <div class="faq-head">
-        <img class="faq-avatar" src="contenido/faq.png" alt="">
-        <h2 class="section-title section-title-flush">Preguntas frecuentes</h2>
+  <div class="readout" aria-hidden="true">
+    <span>X: 128</span><span>Y: 64</span><span>Z: -512</span><span class="readout-sep">//</span><span>Bioma: youtube</span><span class="readout-sep">//</span><span>Sin mods</span>
+  </div>
+
+  <section class="block">
+    <h2 class="sec-title"><span class="sec-num">A</span>Explora</h2>
+    <div class="explore">
+      <a class="ex-card frame" href="#proyectos">
+        <span class="ex-media"><img class="ex-img ex-img-zoom" src="contenido/foi.png" alt="Interior de la fortaleza infernal"></span>
+        <span class="ex-foot">
+          <span class="ex-text">
+            <span class="ex-name">Proyectos</span>
+            <span class="ex-desc">Bases, granjas y la línea de tiempo del mundo</span>
+          </span>
+          <span class="ex-go">→</span>
+        </span>
+      </a>
+      <a class="ex-card frame" href="#packs">
+        <span class="ex-media"><img class="ex-img" src="contenido/tp.png" alt="Muestra de los texture packs"></span>
+        <span class="ex-foot">
+          <span class="ex-text">
+            <span class="ex-name">Texture packs</span>
+            <span class="ex-desc">Los packs que uso, con enlaces de descarga</span>
+          </span>
+          <span class="ex-go">→</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <h2 class="sec-title"><span class="sec-num">B</span>Preguntas frecuentes</h2>
+
+    <details class="qa">
+      <summary class="qa-q">¿Has abandonado la serie?<span class="qa-sign" aria-hidden="true"></span></summary>
+      <div class="qa-a"><p>No. Esta serie requiere tiempo y es normal que el ritmo no sea constante.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-q">¿En qué versión de Minecraft juegas?<span class="qa-sign" aria-hidden="true"></span></summary>
+      <div class="qa-a"><p>Actualmente estoy en la versión 1.20.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-q">¿Usas mods en la serie?<span class="qa-sign" aria-hidden="true"></span></summary>
+      <div class="qa-a"><p>En esta serie no uso mods, aunque los he usado anteriormente.</p></div>
+    </details>
+
+    <details class="qa">
+      <summary class="qa-q">¿Por qué no usas mods?<span class="qa-sign" aria-hidden="true"></span></summary>
+      <div class="qa-a">
+        <p>Principalmente por dos motivos:</p>
+        <ul class="qa-list">
+          <li>Porque me gusta jugar a Minecraft lo más vanilla posible.</li>
+          <li>Por fallos, bugs, corrupción de mundos, etc.</li>
+        </ul>
+        <p>En resumen: si quiero un mundo para toda la vida, busco la forma más segura y la que más me gusta.</p>
       </div>
+    </details>
+  </section>
 
-      <details class="faq-item">
-        <summary class="faq-q"><span class="faq-bullet">◆</span>¿Has abandonado la serie?</summary>
-        <p class="faq-a">No, esta serie requiere tiempo y es normal que el ritmo no sea constante.</p>
-      </details>
+</main>
 
-      <details class="faq-item">
-        <summary class="faq-q"><span class="faq-bullet">◆</span>¿Qué versión de Minecraft estas?</summary>
-        <p class="faq-a">Actualmente estoy con la versión 1.20 de Minecraft.</p>
-      </details>
+<!-- ═══ Proyectos · línea de tiempo ═══ -->
+<main class="page" id="proyectos">
+  <a class="back" href="#home"><span class="back-arrow">←</span>Inicio</a>
 
-      <details class="faq-item">
-        <summary class="faq-q"><span class="faq-bullet">◆</span>¿Usas mods en tu serie de Minecraft?</summary>
-        <p class="faq-a">No uso mods en mi serie de Minecraft actualmente aunque e usado anteriamente.</p>
-      </details>
-
-      <details class="faq-item">
-        <summary class="faq-q"><span class="faq-bullet">◆</span>¿Por qué no usas mods?</summary>
-        <div class="faq-a">
-          <p class="faq-p">Principalmente por dos motivos:</p>
-          <p class="faq-p">1. Porque me gusta jugar Minecraft lo más vanilla posible.</p>
-          <p class="faq-p">2. Por fallos, bugs, corrupción, etc.</p>
-          <p class="faq-p faq-p-last">En resumen, si quiero hacer un mundo para toda la vida busco la forma más segura y que más me guste.</p>
-        </div>
-      </details>
-    </section>
-  </main>
-
-  <!-- ══ Proyectos ══ -->
-  <main class="page" id="proyectos">
-    <a class="btn btn-ghost back-link" href="#home">← Volver</a>
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Sección 02</p>
     <h1 class="page-title">Proyectos</h1>
-    <p class="page-lead">En esta sección puedes encontrar cada proyecto de mi mundo, más una línea de tiempo para ubicarte.</p>
+    <p class="page-lead">Cada construcción del mundo en orden de finalización. Entra en una para ver la galería o salta directo al vídeo.</p>
+  </header>
 
-    <section class="vcard-grid">
-      <article class="vcard">
-        <a class="vcard-link" href="#g-base">
-          <span class="vcard-media"><img class="vcard-img" src="contenido/linia%20de%20tiempo/base.png" alt="Base Central"></span>
-          <span class="vcard-body">
-            <span class="vcard-title">Base Central</span>
-            <span class="vcard-desc">El corazón del mundo: almacenamiento, granjas y mas.</span>
-            <span class="vcard-subtitle">12 abr 2026</span>
-          </span>
-        </a>
-        <!-- Sustituye la URL por el enlace del vídeo de este proyecto -->
-        <a class="vcard-cta" href="https://youtu.be/cXO41NqHXOk?si=hvbw87YNsEd48-XX" target="_blank" rel="noopener noreferrer">Ver vídeo →</a>
+  <ol class="timeline">
+    <li class="tl">
+      <div class="tl-mark"><span class="tl-dot"></span><time class="tl-date" datetime="2026-04-12">12 abr 2026</time></div>
+      <article class="tl-card frame">
+        <a class="tl-media" href="#g-base"><img class="tl-img" src="contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central"></a>
+        <div class="tl-body">
+          <p class="tl-num">01</p>
+          <h2 class="tl-title"><a href="#g-base">Base Central</a></h2>
+          <p class="tl-desc">El corazón del mundo: almacenamiento, granjas de comida, aldeanos y un trading hall.</p>
+          <p class="tl-links">
+            <a class="btn btn-line btn-sm" href="#g-base">Galería · 3 fotos</a>
+            <a class="btn btn-ghost btn-sm" href="https://youtu.be/cXO41NqHXOk?si=hvbw87YNsEd48-XX" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+          </p>
+        </div>
       </article>
+    </li>
 
-      <article class="vcard">
-        <a class="vcard-link" href="#g-fortaleza">
-          <span class="vcard-media"><img class="vcard-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Fortaleza Infernal Optimizada"></span>
-          <span class="vcard-body">
-            <span class="vcard-title">Fortaleza Infernal Optimizada</span>
-            <span class="vcard-desc">Recorrido interior de la fortaleza tras la optimización.</span>
-            <span class="vcard-subtitle">10 may 2026</span>
-          </span>
-        </a>
-        <!-- Sustituye la URL por el enlace del vídeo de este proyecto -->
-        <a class="vcard-cta" href="https://youtu.be/k6vbQ9m7YJo?si=BGniCaydUdzbzsnK" target="_blank" rel="noopener noreferrer">Ver vídeo →</a>
+    <li class="tl">
+      <div class="tl-mark"><span class="tl-dot"></span><time class="tl-date" datetime="2026-05-10">10 may 2026</time></div>
+      <article class="tl-card frame">
+        <a class="tl-media" href="#g-fortaleza"><img class="tl-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza infernal optimizada"></a>
+        <div class="tl-body">
+          <p class="tl-num">02</p>
+          <h2 class="tl-title"><a href="#g-fortaleza">Fortaleza Infernal Optimizada</a></h2>
+          <p class="tl-desc">Recorrido interior de la fortaleza tras despejarla y optimizarla para el spawn de blazes.</p>
+          <p class="tl-links">
+            <a class="btn btn-line btn-sm" href="#g-fortaleza">Galería · 2 fotos</a>
+            <a class="btn btn-ghost btn-sm" href="https://youtu.be/k6vbQ9m7YJo?si=BGniCaydUdzbzsnK" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+          </p>
+        </div>
       </article>
+    </li>
 
-      <article class="vcard">
-        <a class="vcard-link" href="#g-slime">
-          <span class="vcard-media"><img class="vcard-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Slime Farm"></span>
-          <span class="vcard-body">
-            <span class="vcard-title">Slime Farm</span>
-            <span class="vcard-desc">Granja de slimes construida sobre chunk de slime.</span>
-            <span class="vcard-subtitle">10 jul 2026</span>
-          </span>
-        </a>
-        <!-- Sustituye la URL por el enlace del vídeo de este proyecto -->
-        <a class="vcard-cta" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo →</a>
+    <li class="tl">
+      <div class="tl-mark"><span class="tl-dot"></span><time class="tl-date" datetime="2026-07-10">10 jul 2026</time></div>
+      <article class="tl-card frame">
+        <a class="tl-media" href="#g-slime"><img class="tl-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"></a>
+        <div class="tl-body">
+          <p class="tl-num">03</p>
+          <h2 class="tl-title"><a href="#g-slime">Slime Farm</a></h2>
+          <p class="tl-desc">Granja de slimes construida sobre un chunk de slime, con las cuevas despejadas alrededor.</p>
+          <p class="tl-links">
+            <a class="btn btn-line btn-sm" href="#g-slime">Galería · 1 foto</a>
+            <a class="btn btn-ghost btn-sm" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+          </p>
+        </div>
       </article>
+    </li>
 
-      <article class="vcard">
-        <a class="vcard-link" href="#g-gold">
-          <span class="vcard-media"><img class="vcard-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Gold Farm"></span>
-          <span class="vcard-body">
-            <span class="vcard-title">Gold Farm</span>
-            <span class="vcard-desc">Granja de oro en el Nether con plataformas de spawn.</span>
-            <span class="vcard-subtitle">9 ago 2026</span>
-          </span>
-        </a>
-        <!-- Sustituye la URL por el enlace del vídeo de este proyecto -->
-        <a class="vcard-cta" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo →</a>
+    <li class="tl">
+      <div class="tl-mark"><span class="tl-dot"></span><time class="tl-date" datetime="2026-08-09">9 ago 2026</time></div>
+      <article class="tl-card frame">
+        <a class="tl-media" href="#g-gold"><img class="tl-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro en el Nether"></a>
+        <div class="tl-body">
+          <p class="tl-num">04</p>
+          <h2 class="tl-title"><a href="#g-gold">Gold Farm</a></h2>
+          <p class="tl-desc">Granja de oro en el Nether, con plataformas de spawn sobre el mar de lava.</p>
+          <p class="tl-links">
+            <a class="btn btn-line btn-sm" href="#g-gold">Galería · 1 foto</a>
+            <a class="btn btn-ghost btn-sm" href="https://youtu.be/tZL-htTrhRc?si=D2zq52OIUT_9Ka9w" target="_blank" rel="noopener noreferrer">Ver vídeo ↗</a>
+          </p>
+        </div>
       </article>
+    </li>
 
-      <article class="vcard vcard-soon">
-        <span class="vcard-link">
-          <span class="vcard-media"><img class="vcard-img" src="contenido/wip.png" alt="Próximo proyecto"></span>
-          <span class="vcard-body">
-            <span class="vcard-title">Próximamente</span>
-            <span class="vcard-desc">Nuevo proyecto en construcción.</span>
-          </span>
-        </span>
-        <span class="vcard-cta vcard-cta-muted">En obras</span>
+    <li class="tl tl-next">
+      <div class="tl-mark"><span class="tl-dot tl-dot-open"></span><time class="tl-date">próximo</time></div>
+      <article class="tl-card">
+        <div class="tl-media tl-media-wip"><img class="tl-wip" src="contenido/wip.png" alt=""></div>
+        <div class="tl-body">
+          <p class="tl-num tl-num-open">05</p>
+          <h2 class="tl-title">En construcción</h2>
+          <p class="tl-desc">El siguiente proyecto del mundo todavía está en obras. Aparecerá aquí en cuanto esté terminado.</p>
+          <p class="tl-links"><span class="pill pill-wip">En obras</span></p>
+        </div>
       </article>
-    </section>
-  </main>
+    </li>
+  </ol>
+</main>
 
-  <!-- ══ Galería · Base Central ══ -->
-  <main class="page gallery" id="g-base">
-    <a class="btn btn-ghost back-link" href="#proyectos">← Proyectos</a>
-    <p class="kicker">Galería · Proyecto</p>
+<!-- ═══ Galería · Base Central ═══ -->
+<main class="page gallery" id="g-base">
+  <a class="back" href="#proyectos"><span class="back-arrow">←</span>Proyectos</a>
+
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 01</p>
     <h1 class="page-title">Base Central</h1>
-    <p class="page-lead">En esta seccion del mundo hay un poco de todo como por ejemplo: Granja de comida, aldeanos, mobs, sugar cane y un trading hall.</p>
-    <p class="gallery-meta"><span class="tag tag-neutral">12 abr 2026</span><span class="gallery-count">3 fotos</span></p>
-    <hr class="hr">
+    <p class="page-lead">Aquí hay un poco de todo: granja de comida, aldeanos, mobs, caña de azúcar y un trading hall.</p>
+    <p class="meta"><time class="pill" datetime="2026-04-12">12 abr 2026</time><span class="meta-dot"></span><span class="meta-txt">3 fotos</span></p>
+  </header>
 
-    <section class="shot-grid">
-      <figure class="shot shot-wide">
-        <a class="shot-link" href="#lb-base-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base"></a>
-        <figcaption class="shot-cap">Vista general de la base</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-base-2"><img class="shot-img" src="contenido/linia de tiempo/galeria/base1.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Interior · Aldeanos</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-base-3"><img class="shot-img" src="contenido/linia de tiempo/galeria/base2.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Almacén · Manual</figcaption>
-      </figure>
-    </section>
+  <section class="shots">
+    <figure class="shot shot-wide">
+      <a class="shot-link frame" href="#lb-base-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central al atardecer"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Vista general</b>Toda la base vista desde fuera, con las granjas alrededor del edificio principal.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a class="shot-link frame" href="#lb-base-2"><img class="shot-img" src="contenido/linia de tiempo/galeria/base1.png" alt="Interior de la base con los aldeanos"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Interior · aldeanos</b>La zona de aldeanos y el trading hall, dentro del edificio.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a class="shot-link frame" href="#lb-base-3"><img class="shot-img" src="contenido/linia de tiempo/galeria/base2.png" alt="Almacén manual de la base"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Almacén manual</b>El sistema de cofres donde va a parar todo el material del mundo.</figcaption>
+    </figure>
+  </section>
 
-    <div class="lightbox" id="lb-base-1"><a class="lightbox-close" href="#g-base" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base"><a class="btn btn-secondary lightbox-x" href="#g-base">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-base-2"><a class="lightbox-close" href="#g-base" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-base">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-base-3"><a class="lightbox-close" href="#g-base" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-base">Cerrar ✕</a></div>
-  </main>
+  <div class="lb" id="lb-base-1"><a class="lb-bg" href="#g-base" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia%20de%20tiempo/base.png" alt="Vista general de la base central al atardecer"><figcaption class="lb-cap">Vista general de la base</figcaption></figure><a class="lb-x" href="#g-base">Cerrar ✕</a></div>
+  <div class="lb" id="lb-base-2"><a class="lb-bg" href="#g-base" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia de tiempo/galeria/base1.png" alt="Interior de la base con los aldeanos"><figcaption class="lb-cap">Interior · aldeanos</figcaption></figure><a class="lb-x" href="#g-base">Cerrar ✕</a></div>
+  <div class="lb" id="lb-base-3"><a class="lb-bg" href="#g-base" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia de tiempo/galeria/base2.png" alt="Almacén manual de la base"><figcaption class="lb-cap">Almacén manual</figcaption></figure><a class="lb-x" href="#g-base">Cerrar ✕</a></div>
+</main>
 
-  <!-- ══ Galería · Fortaleza Infernal Optimizada ══ -->
-  <main class="page gallery" id="g-fortaleza">
-    <a class="btn btn-ghost back-link" href="#proyectos">← Proyectos</a>
-    <p class="kicker">Galería · Proyecto</p>
+<!-- ═══ Galería · Fortaleza Infernal Optimizada ═══ -->
+<main class="page gallery" id="g-fortaleza">
+  <a class="back" href="#proyectos"><span class="back-arrow">←</span>Proyectos</a>
+
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 02</p>
     <h1 class="page-title">Fortaleza Infernal Optimizada</h1>
-    <p class="page-lead">Recorrido interior de la fortaleza tras la optimización.</p>
-    <p class="gallery-meta"><span class="tag tag-neutral">10 may 2026</span><span class="gallery-count">3 fotos</span></p>
-    <hr class="hr">
+    <p class="page-lead">La fortaleza del Nether despejada y preparada para que los blazes aparezcan solo donde interesa.</p>
+    <p class="meta"><time class="pill" datetime="2026-05-10">10 may 2026</time><span class="meta-dot"></span><span class="meta-txt">2 fotos</span></p>
+  </header>
 
-    <section class="shot-grid">
-      <figure class="shot shot-wide">
-        <a class="shot-link" href="#lb-fort-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza"></a>
-        <figcaption class="shot-cap">Interior de la fortaleza</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-fort-2"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Pasillos · pendiente de subir</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-fort-3"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Exterior · pendiente de subir</figcaption>
-      </figure>
-    </section>
+  <section class="shots">
+    <figure class="shot shot-wide">
+      <a class="shot-link frame" href="#lb-fort-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza infernal"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Interior de la fortaleza</b>Los pasillos principales ya optimizados.</figcaption>
+    </figure>
+    <figure class="shot">
+      <a class="shot-link frame" href="#lb-fort-2"><img class="shot-img" src="contenido/linia de tiempo/galeria/foi1.png" alt="Otra vista de la fortaleza infernal"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Zona de spawn</b>Vista aerea de toda la estructura.</figcaption>
+    </figure>
+    <figure class="shot shot-soon">
+      <div class="shot-link shot-link-soon"><img class="shot-wip" src="contenido/wip.png" alt=""></div>
+      <figcaption class="shot-cap"><b>Exterior</b><span class="shot-pending">Foto pendiente de subir</span></figcaption>
+    </figure>
+  </section>
 
-    <div class="lightbox" id="lb-fort-1"><a class="lightbox-close" href="#g-fortaleza" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza"><a class="btn btn-secondary lightbox-x" href="#g-fortaleza">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-fort-2"><a class="lightbox-close" href="#g-fortaleza" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-fortaleza">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-fort-3"><a class="lightbox-close" href="#g-fortaleza" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-fortaleza">Cerrar ✕</a></div>
-  </main>
+  <div class="lb" id="lb-fort-1"><a class="lb-bg" href="#g-fortaleza" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia%20de%20tiempo/Fortaleza%20Infernal%20Optimizada.png" alt="Interior de la fortaleza infernal"><figcaption class="lb-cap">Interior de la fortaleza</figcaption></figure><a class="lb-x" href="#g-fortaleza">Cerrar ✕</a></div>
+  <div class="lb" id="lb-fort-2"><a class="lb-bg" href="#g-fortaleza" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia de tiempo/galeria/foi1.png" alt="Otra vista de la fortaleza infernal"><figcaption class="lb-cap">Zona de spawn</figcaption></figure><a class="lb-x" href="#g-fortaleza">Cerrar ✕</a></div>
+</main>
 
-  <!-- ══ Galería · Slime Farm ══ -->
-  <main class="page gallery" id="g-slime">
-    <a class="btn btn-ghost back-link" href="#proyectos">← Proyectos</a>
-    <p class="kicker">Galería · Proyecto</p>
+<!-- ═══ Galería · Slime Farm ═══ -->
+<main class="page gallery" id="g-slime">
+  <a class="back" href="#proyectos"><span class="back-arrow">←</span>Proyectos</a>
+
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 03</p>
     <h1 class="page-title">Slime Farm</h1>
-    <p class="page-lead">Granja de slimes construida sobre chunk de slime.</p>
-    <p class="gallery-meta"><span class="tag tag-neutral">10 jul 2026</span><span class="gallery-count">3 fotos</span></p>
-    <hr class="hr">
+    <p class="page-lead">Granja de slimes sobre un chunk de slime, con todas las cuevas de alrededor tapadas para que el spawn se concentre dentro.</p>
+    <p class="meta"><time class="pill" datetime="2026-07-10">10 jul 2026</time><span class="meta-dot"></span><span class="meta-txt">1 foto</span></p>
+  </header>
 
-    <section class="shot-grid">
-      <figure class="shot shot-wide">
-        <a class="shot-link" href="#lb-slime-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"></a>
-        <figcaption class="shot-cap">Interior de la granja</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-slime-2"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Plataformas · pendiente de subir</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-slime-3"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Recolección · pendiente de subir</figcaption>
-      </figure>
-    </section>
+  <section class="shots">
+    <figure class="shot shot-wide">
+      <a class="shot-link frame" href="#lb-slime-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Interior de la granja</b>Las plataformas de spawn vistas desde el punto de espera.</figcaption>
+    </figure>
+    <figure class="shot shot-soon">
+      <div class="shot-link shot-link-soon"><img class="shot-wip" src="contenido/wip.png" alt=""></div>
+      <figcaption class="shot-cap"><b>Recolección</b><span class="shot-pending">Foto pendiente de subir</span></figcaption>
+    </figure>
+    <figure class="shot shot-soon">
+      <div class="shot-link shot-link-soon"><img class="shot-wip" src="contenido/wip.png" alt=""></div>
+      <figcaption class="shot-cap"><b>Exterior</b><span class="shot-pending">Foto pendiente de subir</span></figcaption>
+    </figure>
+  </section>
 
-    <div class="lightbox" id="lb-slime-1"><a class="lightbox-close" href="#g-slime" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"><a class="btn btn-secondary lightbox-x" href="#g-slime">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-slime-2"><a class="lightbox-close" href="#g-slime" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-slime">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-slime-3"><a class="lightbox-close" href="#g-slime" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-slime">Cerrar ✕</a></div>
-  </main>
+  <div class="lb" id="lb-slime-1"><a class="lb-bg" href="#g-slime" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia%20de%20tiempo/slime%20farm.png" alt="Interior de la granja de slimes"><figcaption class="lb-cap">Interior de la granja</figcaption></figure><a class="lb-x" href="#g-slime">Cerrar ✕</a></div>
+</main>
 
-  <!-- ══ Galería · Gold Farm ══ -->
-  <main class="page gallery" id="g-gold">
-    <a class="btn btn-ghost back-link" href="#proyectos">← Proyectos</a>
-    <p class="kicker">Galería · Proyecto</p>
+<!-- ═══ Galería · Gold Farm ═══ -->
+<main class="page gallery" id="g-gold">
+  <a class="back" href="#proyectos"><span class="back-arrow">←</span>Proyectos</a>
+
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Galería · proyecto 04</p>
     <h1 class="page-title">Gold Farm</h1>
-    <p class="page-lead">Granja de oro en el Nether con plataformas de spawn.</p>
-    <p class="gallery-meta"><span class="tag tag-neutral">9 ago 2026</span><span class="gallery-count">3 fotos</span></p>
-    <hr class="hr">
+    <p class="page-lead">Granja de oro en el Nether: plataformas de spawn sobre el mar de lava y recolección centralizada.</p>
+    <p class="meta"><time class="pill" datetime="2026-08-09">9 ago 2026</time><span class="meta-dot"></span><span class="meta-txt">1 foto</span></p>
+  </header>
 
-    <section class="shot-grid">
-      <figure class="shot shot-wide">
-        <a class="shot-link" href="#lb-gold-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro"></a>
-        <figcaption class="shot-cap">Plataformas de spawn</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-gold-2"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Sala de recolección · pendiente de subir</figcaption>
-      </figure>
-      <figure class="shot">
-        <a class="shot-link" href="#lb-gold-3"><img class="shot-img" src="contenido/wip.png" alt="Foto pendiente"></a>
-        <figcaption class="shot-cap">Vista exterior · pendiente de subir</figcaption>
-      </figure>
-    </section>
+  <section class="shots">
+    <figure class="shot shot-wide">
+      <a class="shot-link frame" href="#lb-gold-1"><img class="shot-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro"><span class="shot-zoom">Ampliar</span></a>
+      <figcaption class="shot-cap"><b>Plataformas de spawn</b>Las plataformas montadas sobre el mar de lava, listas para los piglins zombificados.</figcaption>
+    </figure>
+    <figure class="shot shot-soon">
+      <div class="shot-link shot-link-soon"><img class="shot-wip" src="contenido/wip.png" alt=""></div>
+      <figcaption class="shot-cap"><b>Sala de recolección</b><span class="shot-pending">Foto pendiente de subir</span></figcaption>
+    </figure>
+    <figure class="shot shot-soon">
+      <div class="shot-link shot-link-soon"><img class="shot-wip" src="contenido/wip.png" alt=""></div>
+      <figcaption class="shot-cap"><b>Vista exterior</b><span class="shot-pending">Foto pendiente de subir</span></figcaption>
+    </figure>
+  </section>
 
-    <div class="lightbox" id="lb-gold-1"><a class="lightbox-close" href="#g-gold" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro"><a class="btn btn-secondary lightbox-x" href="#g-gold">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-gold-2"><a class="lightbox-close" href="#g-gold" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-gold">Cerrar ✕</a></div>
-    <div class="lightbox" id="lb-gold-3"><a class="lightbox-close" href="#g-gold" aria-label="Cerrar"></a><img class="lightbox-img" src="contenido/wip.png" alt="Foto pendiente"><a class="btn btn-secondary lightbox-x" href="#g-gold">Cerrar ✕</a></div>
-  </main>
+  <div class="lb" id="lb-gold-1"><a class="lb-bg" href="#g-gold" aria-label="Cerrar la foto"></a><figure class="lb-fig"><img class="lb-img" src="contenido/linia%20de%20tiempo/Gold%20farm.png" alt="Plataformas de la granja de oro"><figcaption class="lb-cap">Plataformas de spawn</figcaption></figure><a class="lb-x" href="#g-gold">Cerrar ✕</a></div>
+</main>
 
-  <!-- ══ Texture Packs ══ -->
-  <main class="page" id="packs">
-    <a class="btn btn-ghost back-link" href="#home">← Volver</a>
-    <h1 class="page-title">Texture Packs</h1>
-    <p class="page-lead">Los packs que uso en la serie, disponibles en Modrinth y CurseForge.</p>
-    <p class="shot-cap">Yo uso los de Modrinth, aviso por que hay minimos cambios.</p>
+<!-- ═══ Texture packs ═══ -->
+<main class="page" id="packs">
+  <a class="back" href="#home"><span class="back-arrow">←</span>Inicio</a>
 
-    <section class="pack-grid">
-      <article class="pack">
-        <div class="pack-head">
-          <img class="pack-icon" src="contenido/wither.png" alt="">
-          <h2 class="pack-name">WITHER</h2>
-          <span class="tag tag-neutral">Visibilidad</span>
+  <header class="head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span>Sección 03</p>
+    <h1 class="page-title">Texture packs</h1>
+    <p class="page-lead">Los packs que llevo puestos en la serie. <br>Yo uso los de Modrinth: Aviso por que hay cambios minimos.</p>
+  </header>
+
+  <section class="packs">
+    <article class="pack frame">
+      <div class="pack-head">
+        <img class="pack-icon" src="contenido/wither.png" alt="">
+        <div class="pack-id">
+          <h2 class="pack-name">Wither</h2>
+          <p class="pack-tag">Visibilidad</p>
         </div>
-        <p class="pack-desc">Cambia el color de los corazones del jugador cuando tiene el efecto wither, para que resulte más fácil de identificar por el ojo humano.</p>
-        <div class="pack-links">
-          <a class="btn btn-primary" href="https://modrinth.com/resourcepack/devs-better-wither-hearts" target="_blank" rel="noopener noreferrer"><img class="btn-icon-img" src="contenido/modrinth.png" alt="">Modrinth</a>
-          <a class="btn btn-secondary" href="https://www.curseforge.com/minecraft/texture-packs/devs-better-wither-hearts" target="_blank" rel="noopener noreferrer"><img class="btn-icon-img" src="contenido/cf.png" alt="">CurseForge</a>
-        </div>
-      </article>
+      </div>
+      <p class="pack-desc">Cambia el color de los corazones cuando tienes el efecto wither, para identificarlo de un vistazo sin mirar la barra de efectos.</p>
+      <div class="pack-links">
+        <a class="btn btn-primary btn-sm" href="https://modrinth.com/resourcepack/devs-better-wither-hearts" target="_blank" rel="noopener noreferrer"><img class="btn-ico" src="contenido/modrinth.png" alt="">Modrinth</a>
+        <a class="btn btn-line btn-sm" href="https://www.curseforge.com/minecraft/texture-packs/devs-better-wither-hearts" target="_blank" rel="noopener noreferrer"><img class="btn-ico" src="contenido/cf.png" alt="">CurseForge</a>
+      </div>
+    </article>
 
-      <article class="pack">
-        <div class="pack-head">
-          <img class="pack-icon" src="contenido/rs.png" alt="">
-          <h2 class="pack-name">REDSTONE</h2>
-          <span class="tag tag-neutral">Visibilidad</span>
+    <article class="pack frame">
+      <div class="pack-head">
+        <img class="pack-icon" src="contenido/rs.png" alt="">
+        <div class="pack-id">
+          <h2 class="pack-name">Redstone</h2>
+          <p class="pack-tag">Visibilidad</p>
         </div>
-        <p class="pack-desc">Mejora la visibilidad de los componentes de redstone con colores más claros y hace más fácil identificar su activación. Ideal para una experiencia más cómoda y eficiente con la redstone.</p>
-        <div class="pack-links">
-          <a class="btn btn-primary" href="https://modrinth.com/resourcepack/xk-redstone-display" target="_blank" rel="noopener noreferrer"><img class="btn-icon-img" src="contenido/modrinth.png" alt="">Modrinth</a>
-          <a class="btn btn-secondary" href="https://www.curseforge.com/minecraft/texture-packs/xekr-redstone-display" target="_blank" rel="noopener noreferrer"><img class="btn-icon-img" src="contenido/cf.png" alt="">CurseForge</a>
-        </div>
-      </article>
-    </section>
-  </main>
+      </div>
+      <p class="pack-desc">Aclara los componentes de redstone y hace evidente cuándo están activados. Trabajar con circuitos se vuelve mucho más cómodo.</p>
+      <div class="pack-links">
+        <a class="btn btn-primary btn-sm" href="https://modrinth.com/resourcepack/xk-redstone-display" target="_blank" rel="noopener noreferrer"><img class="btn-ico" src="contenido/modrinth.png" alt="">Modrinth</a>
+        <a class="btn btn-line btn-sm" href="https://www.curseforge.com/minecraft/texture-packs/xekr-redstone-display" target="_blank" rel="noopener noreferrer"><img class="btn-ico" src="contenido/cf.png" alt="">CurseForge</a>
+      </div>
+    </article>
+  </section>
+</main>
 
 </div>
 
@@ -321,9 +388,9 @@
   /* Cerrar el visor de fotos con la tecla Escape */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;
-    var lb = document.querySelector('.lightbox:target');
+    var lb = document.querySelector('.lb:target');
     if (!lb) return;
-    var salida = lb.querySelector('.lightbox-close, .lightbox-x');
+    var salida = lb.querySelector('.lb-bg, .lb-x');
     if (salida) location.replace(salida.getAttribute('href'));
   });
 </script>
