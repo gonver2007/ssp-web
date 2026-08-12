@@ -533,12 +533,12 @@ body:not(:has(.page:target, .lb:target)) #home { display: block; }
   object-position: 53% 44%;
   transform: scale(1.08);
   filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.7));
-  animation: hover-idle 7s ease-in-out infinite;
+  animation: hover-idle 5s ease-in-out infinite;
 }
 
 @keyframes hover-idle {
-  0%, 100% { transform: scale(1.08) translateY(0); }
-  50%      { transform: scale(1.08) translateY(-10px); }
+  0%, 100% { transform: scale(1.08) translateY(15px); }
+  50%      { transform: scale(1.08) translateY(-15px); }
 }
 
 /* Lectura de datos tipo F3 */
