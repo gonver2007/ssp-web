@@ -17,7 +17,6 @@
 }
 
 .hero-title em {
-    position: relative;
     font-style: normal;
     color: var(--cyan);
     text-shadow: 0 0 42px rgba(60, 230, 240, 0.45);

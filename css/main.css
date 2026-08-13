@@ -28,7 +28,6 @@
 @import url("componentes/galeria.css") layer(componentes);
 @import url("componentes/visor.css") layer(componentes);
 @import url("componentes/packs.css") layer(componentes);
-@import url("componentes/pie.css") layer(componentes);
 
 /* Transición entre documentos. Cada sección es ahora una carga de página
    real; esto le devuelve el cambio suave que tenía cuando todo vivía en un

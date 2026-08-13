@@ -79,19 +79,6 @@
     color: var(--text);
 }
 
-/* Hueco reservado para una foto que todavía no existe. Ninguna plantilla
-   lo emite ahora mismo; se conserva del diseño original. */
-.shot-link-soon {
-    display: grid;
-    place-items: center;
-    aspect-ratio: 16 / 9;
-    border-style: dashed;
-    border-color: var(--line);
-}
-.shot-wip { width: 74px; opacity: 0.42; image-rendering: pixelated; }
-
-.shot-pending { color: var(--amber); opacity: 0.85; }
-
 @media (max-width: 860px) {
     .shots { grid-template-columns: minmax(0, 1fr); }
     .shot-wide .shot-img { aspect-ratio: 16 / 9; }
